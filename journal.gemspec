@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Journal::VERSION
   s.authors     = ["Benjamin Willems"]
   s.email       = ["bw@benjaminwil.info"]
-  s.homepage    = "about:none"
+  s.homepage    = "https://benjaminwil.info"
   s.summary     = "A tumblog-like personal journal application."
   s.description = "A journal for all of your thoughts and feelings."
   s.license     = "MIT"
