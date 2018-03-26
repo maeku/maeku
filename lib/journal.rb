@@ -1,5 +1,5 @@
 require "journal/engine"
 
 module Journal
-  # Your code goes here...
+  mattr_accessor :author_class
 end
