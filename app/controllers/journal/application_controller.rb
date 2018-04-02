@@ -2,18 +2,19 @@ module Journal
   class ApplicationController < ::ApplicationController
     protect_from_forgery with: :exception
 
-    helper_method :current_author, :logged_in?
+    helper_method :current_author
 
     private
 
-    # wip: uses session variables to check who the current author is. this
-    # should not depend on a devise-style "current_user" because the
-    # application may not use devise.
     def current_author
-    end
-
-    # wip: if there is a current_author, then logged_in is true.
-    def logged_in?
+      if defined? Journal.current_author
+        Journal.current_author.constantize
+      elsif defined? current_user
+        current_user
+      else
+        raise "Your application needs a 'current_user' method. This method is "/
+          "typically provided if you use an authentication gem like devise."
+      end
     end
 
   end
