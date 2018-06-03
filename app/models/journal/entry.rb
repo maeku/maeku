@@ -7,7 +7,7 @@ module Journal
     private
 
     def set_author
-      self.author = Journal.author_class.constantize.find_or_create_by(id: author_id)
+      self.author = Journal.author_class.find_or_create_by(id: author_id)
     end
   end
 end
