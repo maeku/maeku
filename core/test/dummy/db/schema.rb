@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_05_27_220726) do
 
-  create_table "journal_entries", force: :cascade do |t|
+  create_table "maeku_entries", force: :cascade do |t|
     t.text "entry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

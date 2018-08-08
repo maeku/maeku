@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class Journal::Test < ActiveSupport::TestCase
+class Maeku::Test < ActiveSupport::TestCase
   test "truth" do
-    assert_kind_of Module, Journal
+    assert_kind_of Module, Maeku
   end
 end
