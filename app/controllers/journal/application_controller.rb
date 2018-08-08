@@ -2,6 +2,8 @@ module Journal
   class ApplicationController < ::ApplicationController
     protect_from_forgery with: :exception
 
+    helper_method :current_author?
+
     private
 
     def current_author
@@ -15,5 +17,8 @@ module Journal
       end
     end
 
+    def current_author?
+      @entry.author_id == current_author.id if @entry
+    end
   end
 end
