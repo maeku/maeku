@@ -53,7 +53,7 @@ module Journal
         redirect_to entries_url
       else
         flash[:error] = "Entry could not be destroyed. Contact your support person!"
-        render :index
+        redirect_to entries_url
       end
     end
 
