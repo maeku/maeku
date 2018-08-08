@@ -20,7 +20,7 @@ module Journal
 
     def create
       @entry = Entry.new(entry_params)
-      @entry.author_id = current_author[:id]
+      @entry.author_id = current_author.id
 
       if @entry.save
         redirect_to @entry, notice: 'Entry was successfully created.'
