@@ -1,3 +1,3 @@
-Journal::Engine.routes.draw do
+Maeku::Engine.routes.draw do
   resources :entries
 end

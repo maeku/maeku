@@ -1,6 +1,6 @@
-require "journal/engine"
+require "maeku/engine"
 
-module Journal
+module Maeku
   mattr_accessor :author_class
   mattr_accessor :current_author
 
