@@ -1,6 +1,6 @@
 require 'test_helper'
 
-module Journal
+module Maeku
   class EntryTest < ActiveSupport::TestCase
     
     setup do

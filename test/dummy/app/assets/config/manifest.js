@@ -2,4 +2,4 @@
 //= link_tree ../images
 //= link_directory ../javascripts .js
 //= link_directory ../stylesheets .css
-//= link journal_manifest.js
+//= link maeku_manifest.js

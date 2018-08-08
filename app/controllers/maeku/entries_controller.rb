@@ -1,6 +1,6 @@
-require_dependency "journal/application_controller"
+require_dependency "maeku/application_controller"
 
-module Journal
+module Maeku
   class EntriesController < ApplicationController
     before_action :set_entry, only: [:show, :edit, :update, :destroy]
 

@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :journal do
+# task :maeku do
 #   # Task goes here
 # end

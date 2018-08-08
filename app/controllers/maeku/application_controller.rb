@@ -1,4 +1,4 @@
-module Journal
+module Maeku
   class ApplicationController < ::ApplicationController
     protect_from_forgery with: :exception
 
@@ -9,8 +9,8 @@ module Journal
     def current_author
       if respond_to? :current_user
         current_user
-      elsif Journal.current_author
-        Journal.current_author
+      elsif Maeku.current_author
+        Maeku.current_author
       else
         raise I18n.t 'controller.application.current_author.not_implemented'
       end
