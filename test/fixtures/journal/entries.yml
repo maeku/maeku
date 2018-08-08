@@ -1,7 +1,6 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  entry: MyText
-
+  entry: Today, I ate an orange.
+  author_id: 1
 two:
-  entry: MyText
+  entry: Yesterday, I drank a coffee.
+  author_id: 2
