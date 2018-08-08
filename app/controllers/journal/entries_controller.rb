@@ -4,59 +4,68 @@ module Journal
   class EntriesController < ApplicationController
     before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
-    # GET /entries
     def index
-      @entries = Entry.all
+      @entries = current_author.entries
     end
 
-    # GET /entries/1
     def show
     end
 
-    # GET /entries/new
     def new
       @entry = Entry.new
     end
 
-    # GET /entries/1/edit
     def edit
+      unless current_author?
+        flash[:error] = "You do not have permission to edit that entry."
+        redirect_to entries_url
+      end
     end
 
-    # POST /entries
     def create
       @entry = Entry.new(entry_params)
+      @entry.author_id = current_author.id
 
       if @entry.save
-        redirect_to @entry, notice: 'Entry was successfully created.'
+        flash[:notice] = "Entry was successfully created."
+        redirect_to @entry
       else
+        flash[:error] = "Entry could not be created. Contact your support person!"
         render :new
       end
     end
 
-    # PATCH/PUT /entries/1
     def update
-      if @entry.update(entry_params)
-        redirect_to @entry, notice: 'Entry was successfully updated.'
+      if @entry.update(entry_params) && current_author?
+        flash[:notice] = "Entry was successfully updated."
+        redirect_to @entry
       else
+        flash[:error] = "Entry could not be updated. Contact your support person!"
         render :edit
       end
     end
 
-    # DELETE /entries/1
     def destroy
-      @entry.destroy
-      redirect_to entries_url, notice: 'Entry was successfully destroyed.'
+      @entry = Entry.find(params[:id])
+      if current_author?
+        @entry.destroy
+        flash[:notice] = "Entry was successfully destroyed."
+        redirect_to entries_url
+      else
+        flash[:error] = "Entry could not be destroyed. Contact your support person!"
+        redirect_to entries_url
+      end
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_entry
-        @entry = Entry.find(params[:id])
-      end
 
-      # Only allow a trusted parameter "white list" through.
-      def entry_params
-        params.require(:entry).permit(:entry)
-      end
+    def entry_params
+      params.require(:entry).permit(:entry, :author_id)
+    end
+
+    def set_entry
+      @entry = Entry.find(params[:id])
+    end
+
   end
 end
