@@ -3,7 +3,7 @@ require_relative 'boot'
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "journal"
+require "maeku_core"
 
 module Dummy
   class Application < Rails::Application

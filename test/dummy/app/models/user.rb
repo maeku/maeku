@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  include Journal::AuthorMethods
+  include Maeku::AuthorMethods
 end
