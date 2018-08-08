@@ -1,28 +1,18 @@
-# Journal
-Short description and motivation.
+# maeku (前句), a journalling platform
 
-## Usage
-How to use my plugin.
+The term *maeku* is used to describe elements of the Japanese collaborative
+poetry genre [renga][1]. Specifically, *maeku* refers to a verse where unlikely
+words are strung together to evoke a new or surprising image. 
 
-## Installation
-Add this line to your application's Gemfile:
+Maeku is a [Ruby on Rails][2]-based journalling platform. Eventually, it will
+support multiple users and be extensible with multiple post types. It's inspired
+by Tumblr, [Hi.co][3] (defunct), Japanese poetry, and the idea of controlling
+your own blog content on the web. 
 
-```ruby
-gem 'journal'
-```
+**Maeku is not ready to be used yet.**
 
-And then execute:
-```bash
-$ bundle
-```
+[1]: https://en.wikipedia.org/wiki/Renga
+[2]: https://https://rubyonrails.org
+[3]: https://medium.com/@craigmod/archiving-our-online-communities-e5868eab4d9a
 
-Or install it yourself as:
-```bash
-$ gem install journal
-```
 
-## Contributing
-Contribution directions go here.
-
-## License
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
