@@ -12,8 +12,7 @@ module Journal
       elsif Journal.current_author
         Journal.current_author
       else
-        raise "Your application needs a 'current_user' method. This method is "\
-          "typically provided if you use an authentication gem like devise."
+        raise I18n.t 'controller.application.current_author.not_implemented'
       end
     end
 

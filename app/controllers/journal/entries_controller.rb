@@ -17,7 +17,7 @@ module Journal
 
     def edit
       unless current_author?
-        flash[:error] = "You do not have permission to edit that entry."
+        flash[:error] = I18n.t 'controller.entries.edit.error'
         redirect_to entries_url
       end
     end
@@ -27,20 +27,20 @@ module Journal
       @entry.author_id = current_author.id
 
       if @entry.save
-        flash[:notice] = "Entry was successfully created."
+        flash[:notice] = I18n.t 'controller.entries.create.success'
         redirect_to @entry
       else
-        flash[:error] = "Entry could not be created. Contact your support person!"
+        flash[:error] = I18n.t 'controller.entries.create.error'
         render :new
       end
     end
 
     def update
       if @entry.update(entry_params) && current_author?
-        flash[:notice] = "Entry was successfully updated."
+        flash[:notice] = I18n.t 'controller.entries.update.success'
         redirect_to @entry
       else
-        flash[:error] = "Entry could not be updated. Contact your support person!"
+        flash[:error] = I18n.t 'controller.entries.update.error'
         render :edit
       end
     end
@@ -49,10 +49,10 @@ module Journal
       @entry = Entry.find(params[:id])
       if current_author?
         @entry.destroy
-        flash[:notice] = "Entry was successfully destroyed."
+        flash[:notice] = I18n.t 'controller.entries.destroy.success'
         redirect_to entries_url
       else
-        flash[:error] = "Entry could not be destroyed. Contact your support person!"
+        flash[:error] = I18n.t 'controller.entries.destroy.error'
         redirect_to entries_url
       end
     end
