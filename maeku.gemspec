@@ -1,9 +1,9 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-require "maeku/version"
+require_relative "core/lib/maeku/version"
 
 Gem::Specification.new do |s|
-  s.name        = "maeku_core"
+  s.name        = "maeku"
   s.version     = Maeku::VERSION
   s.authors     = ["Benjamin Willems"]
   s.email       = ["bw@benjaminwil.info"]
@@ -14,7 +14,5 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 5.2"
-
-  s.add_development_dependency "sqlite3", "1.3.11"
+  s.add_dependency "maeku_core", s.version 
 end
