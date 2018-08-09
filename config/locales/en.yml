@@ -1,0 +1,23 @@
+en:
+  controller:
+    application:
+      current_author:
+        not_implemented: >
+          Your application requires a 'current_user' method. If you use an
+          authentication gem like 'devise', this method is provided for you.
+          Your user model should also include the module `Maeku::AuthorMethods`
+          to be compatible with `maeku_core`.
+    entries:
+      create:
+        error: Entry could not be created. Contact the site administrator.
+        success: Entry was successfully created.
+      destroy:
+        error: Entry could not be destroyed. Contact the site administrator.
+        success: Entry was successfully destroyed.
+      edit:
+        error: You do not have permission to edit this entry.
+      update:
+        error: Entry could not be updated. Contact the site administrator.
+        success: Entry was successfully updated.
+  view:
+    before_error_list: "prohibited this entry from being saved:"
