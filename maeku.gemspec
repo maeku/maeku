@@ -16,4 +16,5 @@ Gem::Specification.new do |s|
   s.require_path = "maeku"
 
   s.add_dependency "maeku_core", s.version 
+  s.add_dependency "maeku_editor", s.version
 end
