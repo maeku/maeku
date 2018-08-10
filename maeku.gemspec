@@ -15,4 +15,5 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "maeku_core", s.version 
+  s.add_dependency "maeku_editor", s.version
 end
