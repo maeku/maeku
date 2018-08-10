@@ -5,7 +5,7 @@ module Maeku
     before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
     def index
-      @entries = current_author.entries
+      @entries = current_author.entries || nil
     end
 
     def show
