@@ -1,21 +1,27 @@
 require 'test_helper'
 
-module Journal
+module Maeku
   class EntriesControllerTest < ActionDispatch::IntegrationTest
     include Engine.routes.url_helpers
 
     setup do
-      @authored_entry = journal_entries(:one)
-      @unauthored_entry = journal_entries(:two)
+      @authored_entry = maeku_entries(:one)
+      @unauthored_entry = maeku_entries(:two)
       # current_user always equals User.find(1)
     end
 
-    test "should get entries index" do
+    test "should show author's entries index" do
       get entries_url
       assert_response :success
     end
 
-    test "should get new entry" do
+    test "should show entries index if author has no entries" do
+      Entry.destroy_all
+      get entries_url
+      assert_response :success
+    end
+
+    test "should allow starting a new entry" do
       get new_entry_url
       assert_response :success
     end
@@ -25,12 +31,12 @@ module Journal
       assert_response :success
     end
 
-    test "should get edit for authored entry" do
+    test "should allow editing of authored entry" do
       get edit_entry_url(@authored_entry)
       assert_response :success
     end
 
-    test "should not get edit for another author's entry" do
+    test "should only edit an entry that belongs to the author" do
       get edit_entry_url(@unauthored_entry)
       assert_response :redirect
     end
@@ -49,7 +55,7 @@ module Journal
       assert_redirected_to entry_url(@authored_entry)
     end
 
-    test "should not update another author's entry" do
+    test "should only update entry that belongs to the author" do
       updated_entry = "Yesterday, I ate a potato."
       patch entry_url(@unauthored_entry), params: { entry: { entry: updated_entry } }
       assert_not_equal @unauthored_entry.entry, updated_entry
@@ -62,7 +68,7 @@ module Journal
       assert_redirected_to entries_url
     end
 
-    test "should not destroy another author's entry" do
+    test "should only destroy entry that belongs to the author" do
       assert_difference('Entry.count', 0) do
         delete entry_url(@unauthored_entry)
       end
