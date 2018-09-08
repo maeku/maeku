@@ -36,12 +36,12 @@ module Maeku
     end
 
     def update
-      if @entry.update(entry_params) && current_author?
+      if current_author? && @entry.update(entry_params)
         flash[:notice] = I18n.t 'controller.entries.update.success'
         redirect_to @entry
       else
         flash[:error] = I18n.t 'controller.entries.update.error'
-        render :edit
+        head :forbidden
       end
     end
 
@@ -53,14 +53,14 @@ module Maeku
         redirect_to entries_url
       else
         flash[:error] = I18n.t 'controller.entries.destroy.error'
-        redirect_to entries_url
+        head :forbidden
       end
     end
 
     private
 
     def entry_params
-      params.require(:entry).permit(:entry, :author_id)
+     params.require(:entry).permit(entry_content_attributes: [:content])
     end
 
     def set_entry
