@@ -1,6 +1,6 @@
 <p>
   <strong>Entry:</strong>
-  <%= @entry.entry %>
+  <%= @entry.entry_content.content %>
 </p>
 
 <%= link_to 'Edit', edit_entry_path(@entry) if current_author? %>

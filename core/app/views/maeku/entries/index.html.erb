@@ -11,7 +11,7 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr>
-        <td><%= entry.entry %></td>
+        <td><%= entry.entry_content.content %></td>
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) if current_author? %></td>
       </tr>
