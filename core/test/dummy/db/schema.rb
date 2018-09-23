@@ -12,11 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2018_05_27_220726) do
 
-  create_table "journal_entries", force: :cascade do |t|
-    t.text "entry"
+  create_table "maeku_entries", force: :cascade do |t|
+    t.integer "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "author_id", null: false
+  end
+
+  create_table "maeku_entry_contents", force: :cascade do |t|
+    t.text "content"
+    t.integer "entry_id"
   end
 
   create_table "users", force: :cascade do |t|
