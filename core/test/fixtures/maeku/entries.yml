@@ -1,6 +1,6 @@
 one:
-  entry: Today, I ate an orange.
+  id: 1
   author_id: 1
 two:
-  entry: Yesterday, I drank a coffee.
+  id: 2
   author_id: 2
