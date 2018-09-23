@@ -7,7 +7,7 @@ module Maeku
     setup do
       @authored_entry = maeku_entries(:one)
       @unauthored_entry = maeku_entries(:two)
-      # current_user always equals User.find(1)
+      # In the dummy application, the current_user always equals User.find(1).
     end
 
     test "should show author's entries index" do
@@ -44,21 +44,21 @@ module Maeku
     test "should create entry" do
       assert_difference('Entry.count') do
         entry_text = "Today, I ate a tomato."
-        post entries_url, params: { entry: { entry: entry_text } }
+        post entries_url, params: { entry: { entry_content_attributes: { content: entry_text } } }
       end
       assert_redirected_to entry_url(Entry.last)
     end
 
     test "should update entry" do
       updated_entry = "Yesterday, I ate a tomato."
-      patch entry_url(@authored_entry), params: { entry: { entry: updated_entry } }
+      patch entry_url(@authored_entry), params: { entry: { entry_content_attributes: { content: updated_entry } } }
       assert_redirected_to entry_url(@authored_entry)
     end
 
     test "should only update entry that belongs to the author" do
       updated_entry = "Yesterday, I ate a potato."
-      patch entry_url(@unauthored_entry), params: { entry: { entry: updated_entry } }
-      assert_not_equal @unauthored_entry.entry, updated_entry
+      patch entry_url(@unauthored_entry), params: { entry: { entry_content_attributes: { content: updated_entry } } }
+      assert_not_equal @unauthored_entry.entry_content.content, updated_entry
     end
 
     test "should destroy entry" do
@@ -72,7 +72,6 @@ module Maeku
       assert_difference('Entry.count', 0) do
         delete entry_url(@unauthored_entry)
       end
-      assert_redirected_to entries_url
     end
 
   end
