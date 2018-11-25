@@ -17,7 +17,7 @@ module Maeku
     end
 
     def current_author?
-      @entry.author_id == current_author.id if @entry
+      @entry.author_id == current_author.id if defined? @entry
     end
   end
 end
