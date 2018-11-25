@@ -1,5 +1,10 @@
 # maeku (前句), a journalling platform
 
+[![Build Status][travis-ci-badge]][travis-ci-maeku]
+
+[travis-ci-badge]: https://travis-ci.com/maeku/maeku.svg?branch=master
+[travis-ci-maeku]: https://travis-ci.com/maeku/maeku
+
 The term *maeku* is used to describe elements of the Japanese collaborative
 poetry genre [renga][1]. Specifically, *maeku* refers to a verse where unlikely
 words are strung together to evoke a new or surprising image. 
@@ -14,5 +19,4 @@ your own blog content on the web.
 [1]: https://en.wikipedia.org/wiki/Renga
 [2]: https://https://rubyonrails.org
 [3]: https://medium.com/@craigmod/archiving-our-online-communities-e5868eab4d9a
-
 
