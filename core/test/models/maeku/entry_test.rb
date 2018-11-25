@@ -14,7 +14,7 @@ module Maeku
       assert @entry.save
     end
 
-    test "should not create new entry if entry is nil" do
+    test "should not create new entry if entry has no content" do
       @entry.entry_content = nil
       assert_not @entry.save
     end
