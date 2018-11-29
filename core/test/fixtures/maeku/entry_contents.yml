@@ -1,6 +1,12 @@
 one:
   content: "I fell into the lake."
-  entry_id: 1 
-two: 
+  entry_id: 1
+two:
   content: "I used to sleep soundly."
   entry_id: 2
+three:
+  content: "The stream glowed pale yellow."
+  entry_id: 3
+four:
+  content: "A train inched toward the edge of my city."
+  entry_id: 4
