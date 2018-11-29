@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_030615) do
     t.integer "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type"
   end
 
   create_table "maeku_entry_contents", force: :cascade do |t|
