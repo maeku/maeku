@@ -16,3 +16,9 @@ five:
 six:
   content: "The stream seemed quieter than usual."
   entry_id: 6
+seven:
+  content: "A streetlight turns on at dusk."
+  entry_id: 7
+eight:
+  content: "An old poster blows across the street."
+  entry_id: 8 
