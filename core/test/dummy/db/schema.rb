@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_030615) do
 
   create_table "maeku_entry_contents", force: :cascade do |t|
     t.text "content"
-    t.integer "entry_id"
+    t.integer "entry_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
