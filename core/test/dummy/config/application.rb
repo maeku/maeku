@@ -3,7 +3,9 @@ require_relative 'boot'
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "maeku"
+
+require "maeku_core"
+require "maeku_editor" if Gem.loaded_specs.has_key? 'maeku_editor'
 
 module Dummy
   class Application < Rails::Application
