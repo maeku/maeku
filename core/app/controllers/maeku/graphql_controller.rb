@@ -4,20 +4,16 @@ module Maeku
       variables = ensure_hash(params[:variables])
       query = params[:query]
       operation_name = params[:operationName]
-      context = {
-        # Query context goes here, for example:
-        # current_user: current_user,
-      }
+      context = { current_author: current_author }
       result = MaekuSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
       render json: result
-    rescue => e
-      raise e unless Rails.env.development?
-      handle_error_in_development e
+    rescue => error
+      raise error unless Rails.env.development?
+      handle_error_in_development error
     end
 
     private
 
-    # Handle form data, JSON body, or a blank value
     def ensure_hash(ambiguous_param)
       case ambiguous_param
       when String
@@ -35,11 +31,10 @@ module Maeku
       end
     end
 
-    def handle_error_in_development(e)
-      logger.error e.message
-      logger.error e.backtrace.join("\n")
-
-      render json: { error: { message: e.message, backtrace: e.backtrace }, data: {} }, status: 500
+    def handle_error_in_development(error)
+      logger.error error.message
+      logger.error error.backtrace.join("\n")
+      render json: { error: { message: error.message, backtrace: error.backtrace }, data: {} }, status: 500
     end
   end
 end
