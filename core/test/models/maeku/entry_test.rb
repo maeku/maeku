@@ -4,9 +4,9 @@ module Maeku
   class EntryTest < ActiveSupport::TestCase
 
     setup do
-      author_id = 1
       entry_content = "I saw spoiled fruit on the lawn."
-      @entry = Entry.new(author_id: author_id)
+      @author_id = 1
+      @entry = Entry.new(author_id: @author_id)
       @entry.assign_attributes(entry_content_attributes: { content: entry_content })
     end
 
@@ -36,5 +36,9 @@ module Maeku
       assert @entry.save!
     end
 
+    test "should only show entries by single author" do
+      entries = Entry.entries_for ::Maeku.author_class.find(@author_id)
+      assert entries.all? { |entry| entry.author_id == @author_id }
+    end
   end
 end

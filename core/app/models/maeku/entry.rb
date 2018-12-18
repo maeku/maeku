@@ -22,5 +22,13 @@ module Maeku
     validates_presence_of :audio_files, if: Proc.new { |entry| entry.type == 'Maeku::EntryType::Audio' }
     validates_presence_of :image_files, if: Proc.new { |entry| entry.type == 'Maeku::EntryType::Image' }
     validates_presence_of :video_files, if: Proc.new { |entry| entry.type == 'Maeku::EntryType::Video' }
+
+    class << self
+
+      def entries_for(author)
+        self.all.where(author_id: author.id)
+      end
+
+    end
   end
 end
