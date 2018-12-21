@@ -1,6 +1,7 @@
 module Maeku
   class Types::EntryType < Types::BaseType
     field :id, ID, null: false
+    field :author, AuthorType, null: false
     field :type, String, null: true
     field :content, String, null: true
     # todo ~ what's the best way to include entry attachments in api queries?
