@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module Maeku
-  class EntryType::GalleryTest < ActiveSupport::TestCase
+  class EntryType::ImageTest < ActiveSupport::TestCase
 
     setup do
       author_id = 1
