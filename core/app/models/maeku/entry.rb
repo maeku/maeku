@@ -18,5 +18,9 @@ module Maeku
     validates :audio_files, content_type: ['audio/aac', 'audio/midi', 'audio/mpeg', 'audio/webm', 'audio/x-wav']
     validates :image_files, content_type: ['image/gif', 'image/jpeg', 'image/jpg', 'image/png']
     validates :video_files, content_type: ['video/mp4', 'video/webm']
+
+    validates_presence_of :audio_files, if: Proc.new { |entry| entry.type == 'Maeku::EntryType::Audio' }
+    validates_presence_of :image_files, if: Proc.new { |entry| entry.type == 'Maeku::EntryType::Image' }
+    validates_presence_of :video_files, if: Proc.new { |entry| entry.type == 'Maeku::EntryType::Video' }
   end
 end
