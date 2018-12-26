@@ -22,7 +22,7 @@ module Maeku
 
     field :current_author_entries, [Types::EntryType], null: true do
       description "Returns entries posted by the current author."
-      argument :limit, Int, default_value: 30, required: false
+      argument :limit, Int, default_value: nil, required: false
     end
 
     def all_authors
