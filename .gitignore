@@ -1,9 +1,9 @@
 .bundle/
+dummy/db/*.sqlite3
+dummy/db/*.sqlite3-journal
+dummy/log/*.log
+dummy/storage/
+dummy/tmp/
 log/*.log
 pkg/
-**/test/dummy/db/*.sqlite3
-**/test/dummy/db/*.sqlite3-journal
-**/test/dummy/log/*.log
-**/test/dummy/storage/
-**/test/dummy/tmp/
 **/vendor/bundle
