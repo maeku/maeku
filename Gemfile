@@ -4,6 +4,14 @@ platforms :ruby do
   gem 'sqlite3', require: false
 end
 
-gemspec
+group :development, :test  do
+  gem 'maeku_core', path: './core'
+  gem 'maeku_editor', path: './editor'
+end
 
-gem 'pry'
+group :development do
+  gem 'pry'
+  gem 'graphiql-rails'
+end
+
+gemspec
