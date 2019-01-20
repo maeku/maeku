@@ -1,13 +1,23 @@
-import React from "react";
-import { Component } from "react";
-import ReactDOM from "react-dom";
+import {ApolloProvider} from 'react-apollo';
 
-class EditorApplication extends Component{
+import Client from './configuration/apollo';
+
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+
+class EditorApplication extends Component {
   render() {
-    return(<main> This will be the main application container.</main>);
+    return (
+      <ApolloProvider client={Client}>
+        <main>This will be the main application container.</main>
+      </ApolloProvider>
+    );
   }
 }
 
 export default EditorApplication;
 
-ReactDOM.render(<EditorApplication />, document.querySelector('#editor-application'));
+ReactDOM.render(
+  <EditorApplication />,
+  document.querySelector('#editor-application'),
+);
