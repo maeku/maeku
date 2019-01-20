@@ -10,6 +10,7 @@ PATH
   specs:
     maeku_core (0.1.0)
       active_storage_validations (~> 0.5)
+      graphiql-rails (~> 1.5)
       graphql (~> 1.8)
       rails (~> 5.2)
 

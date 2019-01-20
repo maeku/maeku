@@ -1,4 +1,5 @@
-require "maeku/engine"
+require 'maeku/engine'
+require 'graphiql/rails'
 
 module Maeku
   mattr_accessor :author_class
