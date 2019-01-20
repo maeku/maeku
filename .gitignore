@@ -6,4 +6,5 @@ dummy/storage/
 dummy/tmp/
 log/*.log
 pkg/
+*.hot-update.js*
 **/vendor/bundle
