@@ -1,5 +1,10 @@
 module Maeku
   class GraphqlController < ApplicationController
+
+    # the following action is temporary. once authenticity tokens exist, this
+    # line should not be necessary.
+    skip_before_action :verify_authenticity_token
+
     def execute
       variables = ensure_hash(params[:variables])
       query = params[:query]
