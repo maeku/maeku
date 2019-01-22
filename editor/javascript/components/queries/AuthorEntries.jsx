@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Query} from 'react-apollo';
-
 import gql from 'graphql-tag';
 
 import Entries from '../Entries';
@@ -20,12 +19,7 @@ const AuthorEntries = () => (
       if (loading) return `Loading...`;
       if (error) return `Error.`;
 
-      const entriesData = data.currentAuthorEntries.map(entry => [
-        entry.id,
-        entry.content,
-      ]);
-
-      return <Entries entries={entriesData} />;
+      return <Entries entries={data.currentAuthorEntries} />;
     }}
   </Query>
 );
