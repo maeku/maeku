@@ -1,11 +1,15 @@
-import {ApolloProvider} from 'react-apollo';
+const componentsDir = require.context('./components', true);
+const ReactRailsUJS = require('react_ujs');
 
-import Client from './configuration/apollo';
+import {ApolloProvider} from 'react-apollo';
+import Client from './components/queries/config';
 
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 import AuthorEntries from './components/queries/AuthorEntries';
+
+ReactRailsUJS.useContext(componentsDir);
 
 class EditorApplication extends Component {
   render() {
