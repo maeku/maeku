@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './javascript/EditorApplication.jsx',
+  entry: './javascript/main.jsx',
   devServer: {
     hotOnly: true,
     port: 3200,
