@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "d5cb49608293518fd8bf";
+/******/ 	var hotCurrentHash = "8733295bd457cd0d5cce";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -836,7 +836,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\nvar componentsDir = __webpack_require__(\"./javascript/components sync recursive ^\\\\.\\\\/.*$\");\n\nvar ReactRailsUJS = __webpack_require__(/*! react_ujs */ \"./node_modules/react_ujs/react_ujs/index.js\");\n\n\n\nReactRailsUJS.useContext(componentsDir);\n\n//# sourceURL=webpack:///./javascript/main.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _stylesheets_editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../stylesheets/editor.scss */ \"./stylesheets/editor.scss\");\n/* harmony import */ var _stylesheets_editor_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_stylesheets_editor_scss__WEBPACK_IMPORTED_MODULE_2__);\nvar componentsDir = __webpack_require__(\"./javascript/components sync recursive ^\\\\.\\\\/.*$\");\n\nvar ReactRailsUJS = __webpack_require__(/*! react_ujs */ \"./node_modules/react_ujs/react_ujs/index.js\");\n\n\n\n\nReactRailsUJS.useContext(componentsDir);\n\n//# sourceURL=webpack:///./javascript/main.jsx?");
 
 /***/ }),
 
@@ -1403,6 +1403,17 @@ eval("/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAu
 
 /***/ }),
 
+/***/ "./stylesheets/editor.scss":
+/*!*********************************!*\
+  !*** ./stylesheets/editor.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./stylesheets/editor.scss?");
+
+/***/ }),
+
 /***/ 0:
 /*!**********************************************************************************************************************!*\
   !*** multi (webpack)-dev-server/client?http://localhost:3200 (webpack)/hot/only-dev-server.js ./javascript/main.jsx ***!
@@ -1410,7 +1421,7 @@ eval("/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! /Users/home/Projects/maeku/editor/node_modules/webpack-dev-server/client/index.js?http://localhost:3200 */\"./node_modules/webpack-dev-server/client/index.js?http://localhost:3200\");\n__webpack_require__(/*! /Users/home/Projects/maeku/editor/node_modules/webpack/hot/only-dev-server.js */\"./node_modules/webpack/hot/only-dev-server.js\");\nmodule.exports = __webpack_require__(/*! ./javascript/main.jsx */\"./javascript/main.jsx\");\n\n\n//# sourceURL=webpack:///multi_(webpack)-dev-server/client?");
+eval("__webpack_require__(/*! /Users/benjaminwil/Projects/maeku/editor/node_modules/webpack-dev-server/client/index.js?http://localhost:3200 */\"./node_modules/webpack-dev-server/client/index.js?http://localhost:3200\");\n__webpack_require__(/*! /Users/benjaminwil/Projects/maeku/editor/node_modules/webpack/hot/only-dev-server.js */\"./node_modules/webpack/hot/only-dev-server.js\");\nmodule.exports = __webpack_require__(/*! ./javascript/main.jsx */\"./javascript/main.jsx\");\n\n\n//# sourceURL=webpack:///multi_(webpack)-dev-server/client?");
 
 /***/ })
 

@@ -25,7 +25,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'vendor/assets/javascripts/maeku/editor/'),
-    filename: 'bundle.js'
+    filename: 'editor.js'
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
 };
