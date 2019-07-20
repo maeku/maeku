@@ -1,0 +1,6 @@
+Maeku.author_class = "<%= options[:author_class] %>"
+
+<% if EDITOR_GEM %>Rails.application.config.assets.precompile += %w(
+  maeku/editor/editor.css
+  maeku/editor/editor.js
+)<% end %>
