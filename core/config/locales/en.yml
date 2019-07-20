@@ -19,5 +19,16 @@ en:
       update:
         error: Entry could not be updated. Contact the site administrator.
         success: Entry was successfully updated.
+  generators:
+    maeku:
+      install:
+        user_model_not_found: >
+          Maeku could not find a user model in the typical location (e.g.
+          'app/models/your_user_model.rb'). Before you can use Maeku, you need
+          to `include Maeku::AuthorMethods` in your user model. You can do this
+          by a) using the '--author_class=YourUserClass' flag, or b) entering
+          `include Maeku::AuthorMethods` manually in your user model definition
+          and running this generator again with the '--skip_author_methods'
+          flag.
   view:
     before_error_list: "prohibited this entry from being saved:"
