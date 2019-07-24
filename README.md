@@ -32,15 +32,15 @@ The recommended setup path is as follows:
        cd maeku
        bundle install
 
-3. Migrate and seed the `dummy` database using a provided `maeku:dummy:setup`
+3. Migrate and seed the `dummy` database using the provided `dummy:setup` Rake
+   task:
+
+       bundle exec rake dummy:setup
+
+4. And start the `dummy` application's Rails server using the `dummy:server`
    Rake task:
 
-       cd dummy
-       bundle exec rails maeku:dummy:setup
-
-4. And, from the `dummy` directory, start your local Rails server:
-
-       bundle exec rails server
+       bundle exec rake dummy:server
 
 ### Editor
 
