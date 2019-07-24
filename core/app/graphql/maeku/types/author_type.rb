@@ -4,9 +4,15 @@ module Maeku
 
     Maeku.author_class.columns.each do |column|
       ignored_column_types = [:date, :datetime, :time]
+
       unless ignored_column_types.include? column.type
-        type = const_get(column.type.to_s.capitalize)
-        field column.name.to_sym, type, null: true if column.name !~ /password/
+        name, type = column.name.to_sym, const_get(column.type.to_s.capitalize)
+
+        field name, type, null: true unless column.name =~ /password/
+
+        define_method name do
+          object.public_send(name)
+        end
       end
     end
 
