@@ -27,7 +27,8 @@ namespace :all do
   end
 
   desc "Run tests for all of Maeku's subprojects."
-  task :test => %w[ all:minitest all:jest ]
+  task :test => %w[ all:minitest all:jest ] do
+  end
 end
 
 namespace :dummy do
