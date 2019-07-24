@@ -24,6 +24,7 @@
   "dependencies": {
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
+    "lodash": "^4.17.13",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react_ujs": "^2.4.4"
@@ -33,7 +34,12 @@
       "\\.(jpg|jpeg|svg)$": "<rootDir>/javascript/tests/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/javascript/tests/__mocks__/styleMock.js"
     },
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules"]
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ]
   }
 }
