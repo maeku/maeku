@@ -7,8 +7,16 @@ module Maeku
     # todo ~ what's the best way to include entry attachments in api queries?
     # todo ~ i think the answer is urls.
     # field :attachments, [String], null: true
+    def id
+      object.id
+    end
+
     def content
       Entry.find(id).entry_content.content
+    end
+
+    def type
+      object.type
     end
   end
 end
