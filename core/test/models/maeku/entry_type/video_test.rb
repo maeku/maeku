@@ -24,5 +24,19 @@ module Maeku
       assert @entry.video_files.attached?
     end
 
+    test "should reject an entry with a non-video file attachment" do
+      attachment = {
+        io: File.open(Rails.root.join('public', 'credits-music.mp3')),
+        filename: "credits-music.mp3",
+        content_type: "audio/mpeg"
+      }
+      @entry.video_files.attach(attachment)
+      assert_not @entry.save
+    end
+
+    test "when a video file is attached, entry type should be Maeku::EntryType::Video" do
+      @entry.video_files.attach(@attachment)
+      assert @entry.type == "Maeku::EntryType::Video"
+    end
   end
 end
