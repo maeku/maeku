@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_030615) do
   end
 
   create_table "maeku_entry_contents", force: :cascade do |t|
+    t.text "title"
     t.text "content"
     t.integer "entry_id", null: false
   end

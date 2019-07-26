@@ -1,13 +1,16 @@
 one:
+  title: "In my dream"
   content: "I fell into the lake."
   entry_id: 1
 two:
   content: "I used to sleep soundly."
   entry_id: 2
 three:
+  title: "First night at my hometown"
   content: "The stream glowed pale yellow."
   entry_id: 3
 four:
+  title: "Lying on the hill next to Mishima"
   content: "A train inched toward the edge of my city."
   entry_id: 4
 five:
@@ -17,8 +20,9 @@ six:
   content: "The stream seemed quieter than usual."
   entry_id: 6
 seven:
+  title: "Returning home in the afternoon"
   content: "A streetlight turns on at dusk."
   entry_id: 7
 eight:
   content: "An old poster blows across the street."
-  entry_id: 8 
+  entry_id: 8

@@ -13,6 +13,7 @@ class CreateMaekuEntriesAndMaekuEntryContents < ActiveRecord::Migration[5.1]
 
     create_table :maeku_entry_contents
 
+    add_column :maeku_entry_contents, :title, :text
     add_column :maeku_entry_contents, :content, :text
 
     add_column :maeku_entry_contents, :entry_id, :integer
