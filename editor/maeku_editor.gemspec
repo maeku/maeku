@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 5.2"
   s.add_dependency "react-rails", "~> 2.4"
 
   s.add_dependency "maeku_core"
