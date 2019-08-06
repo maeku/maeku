@@ -14,7 +14,9 @@ four:
   content: "A train inched toward the edge of my city."
   entry_id: 4
 five:
-  content: "A train whistled at me in the night."
+  content: >
+    A train whistling in the distance woke me again. I had fallen asleep in
+    the living room with my journal in hand.
   entry_id: 5
 six:
   content: "The stream seemed quieter than usual."
