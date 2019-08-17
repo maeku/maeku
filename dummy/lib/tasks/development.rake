@@ -5,6 +5,7 @@ namespace :maeku do
         db:drop db:schema:load db:migrate db:setup
         maeku:dummy:db:seed
       ].each do |task|
+        ENV["RAILS_ENV"] = "development"
         Rake::Task[task].invoke
       end
     end
