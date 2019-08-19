@@ -4,3 +4,27 @@ one:
 two:
   id: 2
   author_id: 2
+three:
+  id: 3
+  author_id: 1
+  type: "Maeku::EntryType::Image"
+four:
+  id: 4
+  author_id: 2
+  type: "Maeku::EntryType::Image"
+five:
+  id: 5
+  author_id: 1
+  type: "Maeku::EntryType::Audio"
+six:
+  id: 6
+  author_id: 2
+  type: "Maeku::EntryType::Audio"
+seven:
+  id: 7
+  author_id: 1
+  type: "Maeku::EntryType::Video"
+eight:
+  id: 8
+  author_id: 2
+  type: "Maeku::EntryType::Video"
