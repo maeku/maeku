@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Entries component displays many entries 1`] = `
+<div
+  className="entries"
+>
+  <article
+    className="entry"
+  >
+    <h1
+      className="title"
+    >
+      I walked for a while
+    </h1>
+    <p>
+      I dozed off.
+    </p>
+  </article>
+  <article
+    className="entry"
+  >
+    <h1
+      className="title"
+    >
+      In my sleep
+    </h1>
+    <p>
+      I dreamed of you.
+    </p>
+  </article>
+</div>
+`;
