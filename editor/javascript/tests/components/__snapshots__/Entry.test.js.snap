@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Entry component displays one entry 1`] = `
+<article
+  className="entry"
+>
+  <h1
+    className="title"
+  >
+    I walked for a while
+  </h1>
+  <p>
+    I dozed off.
+  </p>
+</article>
+`;
