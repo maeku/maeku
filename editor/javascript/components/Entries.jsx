@@ -5,7 +5,7 @@ import Entry from './Entry';
 class Entries extends React.Component {
   render() {
     const entries = this.props.entries.map(entry => (
-      <Entry key={entry.id} content={entry.content} />
+      <Entry key={entry.id} title={entry.title} content={entry.content} />
     ));
 
     return <div className="entries">{entries}</div>;
