@@ -1,8 +1,8 @@
 {
   "scripts": {
     "test": "jest",
-    "webpack-dev-server": "webpack-dev-server",
-    "webpack-build": "webpack --env.prod"
+    "webpack-dev-server": "webpack-dev-server --open --config webpack.dev.js",
+    "webpack-build": "webpack --config webpack.prod.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
