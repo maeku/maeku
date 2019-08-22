@@ -1,0 +1,23 @@
+:root {
+  --bg-primary: #eee;
+  --fg-primary: #222;
+  --fg-bright: #000;
+  --fg-dim: #aaa;
+  --border-box-style: 1px solid (--fg-dim);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #222;
+    --fg-primary: #eee;
+    --fg-bright: #fff;
+    --fg-dim: #555;
+    --border-box-style: 1px solid var(--fg-dim);
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--fg-primary);
+}
+
