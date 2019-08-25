@@ -14,31 +14,30 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      filename: "editor.css",
-      chunkFilename: "[id].css",
-    })
+      filename: 'editor.css',
+      chunkFilename: '[id].css',
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.(s*)css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: { presets: ['@babel/env'] }
+        options: {
+          presets: ['@babel/env'],
+          plugins: ['@babel/plugin-proposal-class-properties'],
+        },
       },
-    ]
+    ],
   },
   output: {
     path: path.resolve(__dirname, 'vendor/assets/javascripts/maeku/editor/'),
-    filename: 'editor.js'
+    filename: 'editor.js',
   },
-  resolve: { extensions: ['*', '.js', '.jsx'] },
+  resolve: {extensions: ['*', '.js', '.jsx']},
 };
