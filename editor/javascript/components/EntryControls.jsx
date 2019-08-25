@@ -1,0 +1,21 @@
+import React, {Component} from 'react';
+
+class EntryControls extends React.Component {
+  render() {
+    return (
+      <div className="controls">
+        <button className="control edit">
+          <a href={this.props.urls.edit}>Edit</a>
+        </button>
+        <button className="control view">
+          <a href={this.props.urls.view}>View</a>
+        </button>
+        <button className="control delete">
+          Delete
+        </button>
+      </div>
+    );
+  }
+}
+
+export default EntryControls;
