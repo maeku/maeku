@@ -6,6 +6,7 @@ exports[`the Entries component displays many entries 1`] = `
 >
   <article
     className="entry"
+    onClick={[Function]}
   >
     <h1
       className="title"
@@ -18,6 +19,7 @@ exports[`the Entries component displays many entries 1`] = `
   </article>
   <article
     className="entry"
+    onClick={[Function]}
   >
     <h1
       className="title"
