@@ -1,8 +1,11 @@
 module Maeku
   class Editor::EntryPresenter < SimpleDelegator
-    attr_reader :id, :entry_content
+    include Maeku::Engine.routes.url_helpers
+
+    attr_reader :entry, :id, :entry_content
 
     def initialize(entry)
+      @entry = entry
       @id = entry.id
       @entry_content = entry.entry_content
     end
@@ -11,7 +14,11 @@ module Maeku
       {
         :id => id,
         :title => title,
-        :content => content
+        :content => content,
+        :urls => {
+          :edit => edit_entry_path(entry),
+          :view => entry_path(entry),
+        }
       }
     end
 
