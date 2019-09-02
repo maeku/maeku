@@ -4,4 +4,6 @@ end
 
 Maeku::Editor::Engine.routes.draw do
   root to: 'home#index'
+
+  resources :entries
 end
