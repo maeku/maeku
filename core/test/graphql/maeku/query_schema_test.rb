@@ -4,11 +4,13 @@ module Maeku
   class QuerySchemaTest < ActiveSupport::TestCase
 
     setup do
-      @author = User.find(1)
+      @author = users(:one)
     end
 
     def execute_query(query_string, context={}, variables={})
-      MaekuSchema.execute(query_string, context: context, variables: variables)
+      Timeout::timeout(3) do
+        MaekuSchema.execute(query_string, context: context, variables: variables)
+      end
     end
 
     test "should return a list of all authors" do
