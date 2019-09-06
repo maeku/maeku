@@ -7,52 +7,66 @@ configure({adapter: new Adapter()});
 
 import Entries from '../../components/Entries.jsx';
 
-const entries = [
-  {
-    id: '1',
-    title: 'I walked for a while',
-    content: 'I dozed off.',
-  },
-  {
-    id: '2',
-    title: 'In my sleep',
-    content: 'I dreamed of you.',
-  },
-];
+function someEntries() {
+  return [
+    {
+      id: '1',
+      title: 'I walked for a while',
+      content: 'I dozed off.',
+      urls: {edit: '/entries/1/edit', view: '/entries/1'},
+    },
+    {
+      id: '2',
+      title: 'In my sleep',
+      content: 'I dreamed of you.',
+      urls: {edit: '/entries/2/edit', view: '/entries/2'},
+    },
+  ];
+}
 
-const entriesWrapper = mount(<Entries entries={entries} />);
+function entriesWrapper() {
+  return mount(<Entries entries={someEntries()} />);
+}
 
 test('the Entries component displays many entries', () => {
-  const component = renderer.create(<Entries entries={entries} />).toJSON();
+  const component = renderer
+    .create(<Entries entries={someEntries()} />)
+    .toJSON();
   expect(component).toMatchSnapshot();
 });
 
 test('when no Entry is clicked, no EntryControls are displayed', () => {
-  expect(!entriesWrapper.find('.controls'));
+  const wrapper = entriesWrapper();
+  expect(wrapper.find('.controls')).not;
 });
 
 test("when an Entry is clicked, only the active Entry's EntryControls are \
   displayed", () => {
-  const firstEntry = entriesWrapper.find('.entry').at(0);
+  const wrapper = entriesWrapper();
+  const firstEntry = wrapper.find('.entry').at(0);
   firstEntry.simulate('click');
-  expect(entriesWrapper.find('.controls')).toHaveLength(1);
+  expect(wrapper.find('.controls')).toHaveLength(1);
 });
 
 test('when an Entry is clicked and then clicked again, no EntryControls are \
   displayed', () => {
-  const firstEntry = entriesWrapper.find('.entry').at(0);
+  const wrapper = entriesWrapper();
+  const firstEntry = wrapper.find('.entry').at(0);
   firstEntry.simulate('click');
-  const entryControls = entriesWrapper.find('.controls');
+  const entryControls = wrapper.find('.controls');
   firstEntry.simulate('click');
   expect(entryControls).not;
 });
 
 test('when two different Entry components are clicked, only the most recently \
   clicked Entry has its EntryControls displayed', () => {
-  const firstEntry = entriesWrapper.find('.entry').at(0);
-  const secondEntry = entriesWrapper.find('.entry').at(1);
+  const wrapper = entriesWrapper();
+  const firstEntry = wrapper.find('.entry').at(0);
+  const secondEntry = wrapper.find('.entry').at(1);
+
   firstEntry.simulate('click');
   secondEntry.simulate('click');
-  expect(secondEntry.find('.controls'));
+
   expect(firstEntry.find('.controls')).not;
+  expect(secondEntry.find('.controls'));
 });
