@@ -1,6 +1,6 @@
 module Maeku
   class Editor::EntryPresenter < SimpleDelegator
-    include Maeku::Engine.routes.url_helpers
+    include Maeku::Editor::Engine.routes.url_helpers
 
     attr_reader :entry, :id, :entry_content
 
