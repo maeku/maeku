@@ -5,7 +5,7 @@
   bottom: 0;
   right: 0;
   height: 3em;
-  width: 300px; 
+  width: 300px;
   animation: 100ms slide-in-from-bottom;
 }
 
@@ -17,21 +17,38 @@
   font-size: 0.75em;
   font-weight: bold;
   text-align: center;
-  
-  &.edit { background-color: var(--color-orange); }
-  &.view { background-color: var(--color-blue); }
-  &.delete { background-color: var(--color-red); }
-  
+  text-decoration: none;
+
+  span {
+    color: var(--fg-primary);
+  }
+
+  &.edit {
+    background-color: var(--color-orange);
+  }
+  &.view {
+    background-color: var(--color-blue);
+  }
+  &.delete {
+    background-color: var(--color-red);
+  }
+
   &:not(:last-child) {
     border-width: 2px 0 0 2px;
   }
 }
 
-@media (max-width:700px) {
-  .entry .controls { width: 100%; }
+@media (max-width: 700px) {
+  .entry .controls {
+    width: 100%;
+  }
 }
 
 @keyframes slide-in-from-bottom {
-  0% { transform: translateY(100%); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

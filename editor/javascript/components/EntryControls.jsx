@@ -4,14 +4,14 @@ class EntryControls extends React.Component {
   render() {
     return (
       <div className="controls">
-        <button className="control edit">
-          <a href={this.props.urls.edit}>Edit</a>
-        </button>
-        <button className="control view">
-          <a href={this.props.urls.show}>View</a>
-        </button>
+        <a className="control edit" href={this.props.urls.edit}>
+          <span>Edit</span>
+        </a>
+        <a className="control view" href={this.props.urls.show}>
+          <span>View</span>
+        </a>
         <button className="control delete" onClick={this.props.ondelete}>
-          Delete
+          <span>Delete</span>
         </button>
       </div>
     );
