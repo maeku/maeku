@@ -8,7 +8,7 @@ class EntryControls extends React.Component {
           <a href={this.props.urls.edit}>Edit</a>
         </button>
         <button className="control view">
-          <a href={this.props.urls.view}>View</a>
+          <a href={this.props.urls.show}>View</a>
         </button>
         <button className="control delete" onClick={this.props.ondelete}>
           Delete

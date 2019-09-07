@@ -11,7 +11,7 @@ class Entry extends React.Component {
   }
 
   deleteEntry() {
-    const url = '/editor/entries/' + this.props.id;
+    const url = this.props.urls.show;
     return fetch(url, {
       method: 'DELETE',
     });

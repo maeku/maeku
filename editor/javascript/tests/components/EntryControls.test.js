@@ -11,12 +11,12 @@ import EntryControls from '../../components/EntryControls.jsx';
 // model that generates them.
 function entryControlsWrapper() {
   const controls = (
-    <EntryControls urls={{edit: '/entries/1/edit', view: '/entries/1'}} />
+    <EntryControls urls={{edit: '/entries/1/edit', show: '/entries/1'}} />
   );
   return mount(controls);
 }
 
-test('the EntryControls component a "view entry" button', () => {
+test('the EntryControls component a "show entry" button', () => {
   expect(entryControlsWrapper().find('.view'));
 });
 

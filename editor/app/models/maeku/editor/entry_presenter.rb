@@ -17,7 +17,7 @@ module Maeku
         :content => content,
         :urls => {
           :edit => edit_entry_path(entry),
-          :view => entry_path(entry),
+          :show => entry_path(entry),
         }
       }
     end

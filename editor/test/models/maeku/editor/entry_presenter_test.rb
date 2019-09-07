@@ -34,7 +34,7 @@ module Maeku
       end
 
       test "should return the entry view path" do
-        presenter_view_path = EntryPresenter.new(@entry_with_title).data[:urls][:view]
+        presenter_view_path = EntryPresenter.new(@entry_with_title).data[:urls][:show]
         expected_view_path = "/entries/4"
         assert presenter_view_path, expected_view_path
       end
