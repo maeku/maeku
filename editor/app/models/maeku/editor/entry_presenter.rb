@@ -1,5 +1,6 @@
 module Maeku
   class Editor::EntryPresenter < SimpleDelegator
+    include ActionView::Helpers::DateHelper
     include Maeku::Editor::Engine.routes.url_helpers
 
     attr_reader :entry, :id, :entry_content
@@ -35,11 +36,15 @@ module Maeku
     end
 
     def created_at
-      @entry.created_at
+      datetime = @entry.created_at
+      time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago_suffix')
+      return "#{time_ago_in_words(datetime)} #{time_ago_suffix}"
     end
 
     def updated_at
-      @entry.updated_at
+      datetime = @entry.updated_at
+      time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago.suffix')
+      return "#{time_ago_in_words(datetime)} #{time_ago_suffix}"
     end
 
     private

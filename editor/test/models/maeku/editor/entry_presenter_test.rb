@@ -3,6 +3,7 @@ require 'test_helper'
 module Maeku
   module Editor
     class EntryPresenterTest < ActiveSupport::TestCase
+      include ActionView::Helpers::DateHelper
 
       setup do
         @entry_with_title = maeku_entries(:four)
@@ -37,6 +38,27 @@ module Maeku
         presenter_view_path = EntryPresenter.new(@entry_with_title).data[:urls][:show]
         expected_view_path = "/entries/4"
         assert presenter_view_path, expected_view_path
+      end
+
+      test "should return how long ago the entry was created" do
+        presenter = EntryPresenter.new(@entry_with_title)
+        presenter_created_at = presenter.data[:datetime][:created]
+        expected_date = time_ago_in_words(@entry_with_title.created_at)
+        time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago_suffix')
+        expected_value = "#{expected_date} #{time_ago_suffix}"
+        require 'pry'; binding.pry
+
+        assert presenter_created_at, expected_value
+      end
+
+      test "should return how long ago the entry was updated" do
+        presenter = EntryPresenter.new(@entry_with_title)
+        presenter_updated_at = presenter.data[:datetime][:updated]
+        expected_date = time_ago_in_words(@entry_with_title.updated_at)
+        time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago_suffix')
+        expected_value = "#{expected_date} #{time_ago_suffix}"
+
+        assert presenter_updated_at, expected_value
       end
     end
   end

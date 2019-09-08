@@ -1,0 +1,5 @@
+en: 
+  editor:
+    models:
+      entry_presenter:
+        time_ago_suffix: ago
