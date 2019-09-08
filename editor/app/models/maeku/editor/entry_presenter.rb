@@ -15,6 +15,10 @@ module Maeku
         :id => id,
         :title => title,
         :content => content,
+        :datetime => {
+          :created => created_at,
+          :updated => updated_at
+        },
         :urls => {
           :edit => edit_entry_path(entry),
           :show => entry_path(entry),
@@ -28,6 +32,14 @@ module Maeku
 
     def content
       entry_content.content
+    end
+
+    def created_at
+      @entry.created_at
+    end
+
+    def updated_at
+      @entry.updated_at
     end
 
     private
