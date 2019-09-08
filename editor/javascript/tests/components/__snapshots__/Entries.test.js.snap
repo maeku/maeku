@@ -13,9 +13,7 @@ exports[`the Entries component displays many entries 1`] = `
     >
       I walked for a while
     </h1>
-    <p>
-      I dozed off.
-    </p>
+    <p />
   </article>
   <article
     className="entry"
@@ -26,9 +24,7 @@ exports[`the Entries component displays many entries 1`] = `
     >
       In my sleep
     </h1>
-    <p>
-      I dreamed of you.
-    </p>
+    <p />
   </article>
 </div>
 `;

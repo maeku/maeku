@@ -27,7 +27,7 @@ class Entry extends React.Component {
       this.state.displayed && (
         <article onClick={this.props.onClick} className="entry">
           <EntryTitle title={this.props.title} />
-          <p>{this.props.content}</p>
+          <p>{this.props.datetime.created}</p>
           {this.props.active && (
             <EntryControls
               id={this.props.id}

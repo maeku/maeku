@@ -12,13 +12,13 @@ function someEntries() {
     {
       id: '1',
       title: 'I walked for a while',
-      content: 'I dozed off.',
+      datetime: '2019-09-02T19:47:41.113Z',
       urls: {edit: '/entries/1/edit', view: '/entries/1'},
     },
     {
       id: '2',
       title: 'In my sleep',
-      content: 'I dreamed of you.',
+      datetime: '2019-09-02T19:47:41.113Z',
       urls: {edit: '/entries/2/edit', view: '/entries/2'},
     },
   ];

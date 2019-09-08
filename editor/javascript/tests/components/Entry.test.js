@@ -10,17 +10,25 @@ import Entry from '../../components/Entry.jsx';
 const props = {
   id: '1',
   title: 'I walked for a while',
-  content: 'I dozed off.',
+  datetime: {created: '2019-09-02T19:47:41.113Z'},
 };
 
 const entryWrapper = shallow(
-  <Entry key={props.id} title={props.title} content={props.content} />,
+  <Entry
+    key={props.id}
+    title={props.title}
+    datetime={props.datetime.created}
+  />,
 );
 
 test('the Entry component displays one entry', () => {
   const component = renderer
     .create(
-      <Entry key={props.id} title={props.title} content={props.content} />,
+      <Entry
+        key={props.id}
+        title={props.title}
+        datetime={props.datetime.created}
+      />,
     )
     .toJSON();
 

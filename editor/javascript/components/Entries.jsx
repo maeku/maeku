@@ -25,7 +25,7 @@ class Entries extends React.Component {
         active={+Object.is(entry.id, activeEntryId) || null}
         id={entry.id}
         title={entry.title}
-        content={entry.content}
+        datetime={entry.datetime}
         urls={entry.urls}
       />
     ));
