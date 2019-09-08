@@ -58,5 +58,9 @@ module Maeku
       user_class = options[:author_class]
       Rails.root.join("app", "models", "#{user_class.downcase}.rb").to_s
     end
+
+    if EDITOR_GEM
+      generate "maeku:editor:install"
+    end
   end
 end
