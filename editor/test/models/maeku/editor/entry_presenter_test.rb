@@ -46,7 +46,6 @@ module Maeku
         expected_date = time_ago_in_words(@entry_with_title.created_at)
         time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago_suffix')
         expected_value = "#{expected_date} #{time_ago_suffix}"
-        require 'pry'; binding.pry
 
         assert presenter_created_at, expected_value
       end
