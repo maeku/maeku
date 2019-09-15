@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import Entry from './Entry';
 
@@ -21,8 +22,8 @@ class Entries extends React.Component {
     const entries = this.props.entries.map(entry => (
       <Entry
         key={entry.id}
+        active={Object.is(entry.id, activeEntryId)}
         onClick={this.toggleActivatedEntry.bind(this, entry.id)}
-        active={+Object.is(entry.id, activeEntryId) || null}
         id={entry.id}
         title={entry.title}
         datetime={entry.datetime}
@@ -33,5 +34,9 @@ class Entries extends React.Component {
     return <div className="entries">{entries}</div>;
   }
 }
+
+Entries.propTypes = {
+  active: PropTypes.bool,
+};
 
 export default Entries;
