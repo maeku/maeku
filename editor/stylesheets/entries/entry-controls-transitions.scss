@@ -5,7 +5,9 @@
   &.enter {
     transition: var(--transition-default-ms);
   }
-  &.enter-active {
+
+  &.enter-active,
+  &.enter-done {
     transform: translateY(0);
   }
   &.exit {
@@ -15,4 +17,3 @@
     transform: translateY(100%);
   }
 }
-
