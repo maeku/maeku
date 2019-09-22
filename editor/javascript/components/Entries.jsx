@@ -21,12 +21,12 @@ class Entries extends React.Component {
     const activeEntryId = this.state.activeEntryId;
     const entries = this.props.entries.map(entry => (
       <Entry
+        id={entry.id}
         key={entry.id}
         active={Object.is(entry.id, activeEntryId)}
-        onClick={this.toggleActivatedEntry.bind(this, entry.id)}
-        id={entry.id}
-        title={entry.title}
         datetime={entry.datetime}
+        onClick={this.toggleActivatedEntry.bind(this, entry.id)}
+        title={entry.title}
         urls={entry.urls}
       />
     ));

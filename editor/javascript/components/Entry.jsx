@@ -28,13 +28,12 @@ class Entry extends React.Component {
         <article onClick={this.props.onClick} className="entry">
           <EntryTitle title={this.props.title} />
           <p>{this.props.datetime.created}</p>
-          {this.props.active && (
-            <EntryControls
-              id={this.props.id}
-              urls={this.props.urls}
-              ondelete={this.disappearEntry}
-            />
-          )}
+          <EntryControls
+            id={this.props.id}
+            active={this.props.active}
+            ondelete={this.disappearEntry}
+            urls={this.props.urls}
+          />
         </article>
       )
     );
