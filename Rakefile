@@ -31,9 +31,20 @@ namespace :all do
   end
 end
 
+namespace :editor do
+  desc "Start the Webpack developer server for development on "        \
+    "maeku_editor."
+  task :webpack do
+    Dir.chdir("editor") do
+      sh "yarn install"
+      sh "yarn webpack-dev-server"
+    end
+  end
+end
+
 namespace :dummy do
   desc "Migrate and seed the dummy application database (for local "   \
-       "development)."
+    "development)."
   task :setup do
     Dir.chdir("dummy") do
       sh "bundle exec rails maeku:dummy:setup"
