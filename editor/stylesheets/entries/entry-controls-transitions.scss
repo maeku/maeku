@@ -1,0 +1,18 @@
+.entry .controls {
+  &:not(.enter) {
+    transform: translateY(100%);
+  }
+  &.enter {
+    transition: var(--transition-default-ms);
+  }
+  &.enter-active {
+    transform: translateY(0);
+  }
+  &.exit {
+    transition: var(--transition-default-ms);
+  }
+  &.exit-active {
+    transform: translateY(100%);
+  }
+}
+

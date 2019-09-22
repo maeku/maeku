@@ -1,3 +1,5 @@
+@import 'entry-controls-transitions';
+
 .entry .controls {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -6,7 +8,12 @@
   right: 0;
   height: 3em;
   width: 300px;
-  animation: 100ms slide-in-from-bottom;
+}
+
+@media (max-width: 700px) {
+  .entry .controls {
+    width: 100%;
+  }
 }
 
 .entry .controls .control {
@@ -31,6 +38,7 @@
   }
   &.delete {
     background-color: var(--color-red);
+    cursor: pointer;
   }
 
   &:not(:last-child) {
@@ -38,17 +46,3 @@
   }
 }
 
-@media (max-width: 700px) {
-  .entry .controls {
-    width: 100%;
-  }
-}
-
-@keyframes slide-in-from-bottom {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
