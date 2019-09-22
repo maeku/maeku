@@ -4,7 +4,7 @@ import {CSSTransition} from 'react-transition-group';
 class EntryControls extends React.Component {
   render() {
     return (
-      <CSSTransition appear={true} in={this.props.active} timeout={500}>
+      <CSSTransition in={this.props.active} timeout={500}>
         <div className="controls">
           <a className="control edit" href={this.props.urls.edit}>
             <span>Edit</span>
