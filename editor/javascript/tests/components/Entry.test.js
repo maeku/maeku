@@ -11,6 +11,7 @@ const props = {
   id: '1',
   title: 'I walked for a while',
   datetime: {created: '2019-09-02T19:47:41.113Z'},
+  urls: {edit: '/entries/1/edit', show: '/entries/1'},
 };
 
 const entryWrapper = shallow(
@@ -18,6 +19,7 @@ const entryWrapper = shallow(
     key={props.id}
     title={props.title}
     datetime={props.datetime.created}
+    urls={props.urls}
   />,
 );
 
@@ -28,6 +30,7 @@ test('the Entry component displays one entry', () => {
         key={props.id}
         title={props.title}
         datetime={props.datetime.created}
+        urls={props.urls}
       />,
     )
     .toJSON();

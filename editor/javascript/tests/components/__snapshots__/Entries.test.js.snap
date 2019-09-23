@@ -14,6 +14,33 @@ exports[`the Entries component displays many entries 1`] = `
       I walked for a while
     </h1>
     <p />
+    <div
+      className="controls"
+    >
+      <a
+        className="control edit"
+        href="/entries/1/edit"
+      >
+        <span>
+          Edit
+        </span>
+      </a>
+      <a
+        className="control view"
+      >
+        <span>
+          View
+        </span>
+      </a>
+      <button
+        className="control delete"
+        onClick={[Function]}
+      >
+        <span>
+          Delete
+        </span>
+      </button>
+    </div>
   </article>
   <article
     className="entry"
@@ -25,6 +52,33 @@ exports[`the Entries component displays many entries 1`] = `
       In my sleep
     </h1>
     <p />
+    <div
+      className="controls"
+    >
+      <a
+        className="control edit"
+        href="/entries/2/edit"
+      >
+        <span>
+          Edit
+        </span>
+      </a>
+      <a
+        className="control view"
+      >
+        <span>
+          View
+        </span>
+      </a>
+      <button
+        className="control delete"
+        onClick={[Function]}
+      >
+        <span>
+          Delete
+        </span>
+      </button>
+    </div>
   </article>
 </div>
 `;
