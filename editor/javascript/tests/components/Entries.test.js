@@ -40,33 +40,31 @@ test('when no Entry is clicked, no EntryControls are displayed', () => {
   expect(wrapper.find('.controls')).not;
 });
 
-test("when an Entry is clicked, only the active Entry's EntryControls are \
-  displayed", () => {
-  const wrapper = entriesWrapper();
-  const firstEntry = wrapper.find('.entry').at(0);
-  firstEntry.simulate('click');
-  expect(wrapper.find('.controls')).toHaveLength(1);
-});
+describe('an entry is selected and showing its EntryControls', () => {
+  let entries;
+  let firstEntry;
+  let wrapper;
 
-test('when an Entry is clicked and then clicked again, no EntryControls are \
-  displayed', () => {
-  const wrapper = entriesWrapper();
-  const firstEntry = wrapper.find('.entry').at(0);
-  firstEntry.simulate('click');
-  const entryControls = wrapper.find('.controls');
-  firstEntry.simulate('click');
-  expect(entryControls).not;
-});
+  beforeEach(() => {
+    entries = someEntries();
+    entries[0].active = true;
+    wrapper = mount(<Entries entries={entries} />);
+    firstEntry = wrapper.find('.entry').at(0);
+  });
 
-test('when two different Entry components are clicked, only the most recently \
-  clicked Entry has its EntryControls displayed', () => {
-  const wrapper = entriesWrapper();
-  const firstEntry = wrapper.find('.entry').at(0);
-  const secondEntry = wrapper.find('.entry').at(1);
+  test('the EntryControls are displayed', () => {
+    expect(firstEntry.find('div.controls.enter-done'));
+  });
 
-  firstEntry.simulate('click');
-  secondEntry.simulate('click');
+  test('on click, EntryControls are hidden', () => {
+    firstEntry.simulate('click');
+    expect(firstEntry.find('div.controls.enter-done')).not;
+  });
 
-  expect(firstEntry.find('.controls')).not;
-  expect(secondEntry.find('.controls'));
+  test('when second entry is clicked, those EntryControls are shown instead', () => {
+    const secondEntry = wrapper.find('.entry').at(1);
+    secondEntry.simulate('click');
+    expect(firstEntry.find('div.controls.enter-done')).not;
+    expect(secondEntry.find('div.controls.enter-done'));
+  });
 });
