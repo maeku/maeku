@@ -10,7 +10,7 @@
   width: 300px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 420px) {
   .entry .controls {
     width: 100%;
   }
@@ -19,12 +19,11 @@
 .entry .controls .control {
   grid-row: 1/3;
   border: var(--border-box-style);
-  border-width: 2px 2px 0 2px;
   line-height: 4em;
   font-size: 0.75em;
-  font-weight: bold;
   text-align: center;
   text-decoration: none;
+  text-transform: lowercase;
 
   span {
     color: var(--fg-primary);
@@ -42,7 +41,6 @@
   }
 
   &:not(:last-child) {
-    border-width: 2px 0 0 2px;
+    border-width: 1px 0 0 1px;
   }
 }
-
