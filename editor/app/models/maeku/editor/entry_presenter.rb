@@ -51,7 +51,7 @@ module Maeku
 
     def generate_title_from_content
       content = entry_content.content
-      content.truncate(35, separator: /\s/)
+      content.truncate(70, separator: /\s/)
     end
   end
 end

@@ -16,6 +16,9 @@
   .title {
     color: var(--fg-bright);
     font-size: 1em;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
