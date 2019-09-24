@@ -3,8 +3,13 @@
 <head>
   <title>Dummy Journal</title>
   <%= javascript_include_tag "maeku/application" %>
-  <%= javascript_include_tag "maeku/editor/editor" %>
-  <%= stylesheet_link_tag "maeku/editor/editor" %>
+  <% if Rails.env.development? %>
+    <%= javascript_include_tag "maeku/editor/editor.dev" %>
+    <%= stylesheet_link_tag "maeku/editor/editor.dev" %>
+  <% else %>
+    <%= javascript_include_tag "maeku/editor/editor" %>
+    <%= stylesheet_link_tag "maeku/editor/editor" %>
+  <% end %>
   <%= csrf_meta_tags %>
 </head>
 <body>

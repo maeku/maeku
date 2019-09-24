@@ -14,7 +14,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'editor.css',
+      filename: 'editor.dev.css',
       chunkFilename: '[id].css',
     }),
   ],
@@ -37,7 +37,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'vendor/assets/javascripts/maeku/editor/'),
-    filename: 'editor.js',
+    filename: 'editor.dev.js',
   },
   resolve: {extensions: ['*', '.js', '.jsx']},
 };

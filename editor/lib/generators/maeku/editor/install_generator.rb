@@ -14,5 +14,24 @@ module Maeku
           RUBY
       end
     end
+
+    def precompile_editor_assets
+      append_to_file "config/initializers/maeku.rb" do
+        <<-RUBY
+
+if Rails.env.development?
+  Rails.application.config.assets.precompile += %w[
+    maeku/editor/editor.dev.css
+    maeku/editor/editor.dev.js
+  ]
+else
+  Rails.application.config.assets.precompile += %w[
+    maeku/editor/editor.css
+    maeku/editor/editor.js
+  ]
+end
+        RUBY
+      end
+    end
   end
 end

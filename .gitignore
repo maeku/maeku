@@ -4,6 +4,7 @@ dummy/db/*.sqlite3-journal
 dummy/log/*.log
 dummy/storage/
 dummy/tmp/
+editor.dev.*
 log/*.log
 pkg/
 *.hot-update.js*
