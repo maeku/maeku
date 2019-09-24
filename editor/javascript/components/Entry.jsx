@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 
-import EntryTitle from './EntryTitle';
 import EntryControls from './EntryControls';
+import EntryDateTime from './EntryDateTime';
+import EntryTitle from './EntryTitle';
 
 class Entry extends React.Component {
   constructor(props) {
@@ -27,11 +28,7 @@ class Entry extends React.Component {
       this.state.displayed && (
         <article onClick={this.props.onClick} className="entry">
           <EntryTitle title={this.props.title} />
-          <time
-            dateTime={this.props.datetime.iso.created}
-            className="created-at">
-            {this.props.datetime.created}
-          </time>
+          <EntryDateTime datetime={this.props.datetime} />
           <EntryControls
             id={this.props.id}
             active={this.props.active}

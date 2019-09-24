@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the EntryDateTime component displays an entry's creation date 1`] = `
+<time
+  className="created-at"
+  dateTime="2019-09-02T19:47:41.113Z"
+>
+  A million years ago
+</time>
+`;
