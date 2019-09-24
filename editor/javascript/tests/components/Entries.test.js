@@ -12,13 +12,19 @@ function someEntries() {
     {
       id: '1',
       title: 'I walked for a while',
-      datetime: '2019-09-02T19:47:41.113Z',
+      datetime: {
+        created: 'A million years ago',
+        iso: {created: '2019-09-02T19:47:41.113Z'},
+      },
       urls: {edit: '/entries/1/edit', view: '/entries/1'},
     },
     {
       id: '2',
       title: 'In my sleep',
-      datetime: '2019-09-02T19:47:41.113Z',
+      datetime: {
+        created: 'A million years ago',
+        iso: {created: '2019-09-02T19:47:41.113Z'},
+      },
       urls: {edit: '/entries/2/edit', view: '/entries/2'},
     },
   ];

@@ -10,7 +10,10 @@ import Entry from '../../components/Entry.jsx';
 const props = {
   id: '1',
   title: 'I walked for a while',
-  datetime: {created: '2019-09-02T19:47:41.113Z'},
+  datetime: {
+    created: 'A million years ago',
+    iso: {created: '2019-09-02T19:47:41.113Z'},
+  },
   urls: {edit: '/entries/1/edit', show: '/entries/1'},
 };
 
@@ -18,7 +21,7 @@ const entryWrapper = shallow(
   <Entry
     key={props.id}
     title={props.title}
-    datetime={props.datetime.created}
+    datetime={props.datetime}
     urls={props.urls}
   />,
 );
@@ -29,7 +32,7 @@ test('the Entry component displays one entry', () => {
       <Entry
         key={props.id}
         title={props.title}
-        datetime={props.datetime.created}
+        datetime={props.datetime}
         urls={props.urls}
       />,
     )

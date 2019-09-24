@@ -59,6 +59,20 @@ module Maeku
 
         assert presenter_updated_at, expected_value
       end
+       
+      test "should return the iso created_at time from the record" do
+        presenter = EntryPresenter.new(@entry_with_title)
+        presenter_created_at = presenter.data[:datetime][:iso][:created]
+        expected_date = @entry_with_title.created_at
+        assert presenter_created_at, expected_date
+      end
+      
+      test "should return the iso updated_at time from the record" do
+        presenter = EntryPresenter.new(@entry_with_title)
+        presenter_updated_at = presenter.data[:datetime][:iso][:updated]
+        expected_date = @entry_with_title.updated_at
+        assert presenter_updated_at, expected_date
+      end
     end
   end
 end

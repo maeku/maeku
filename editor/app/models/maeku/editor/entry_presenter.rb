@@ -18,7 +18,11 @@ module Maeku
         :content => content,
         :datetime => {
           :created => created_at,
-          :updated => updated_at
+          :updated => updated_at,
+          :iso => {
+            :created => @entry.created_at,
+            :updated => @entry.updated_at
+          }
         },
         :urls => {
           :edit => edit_entry_path(entry),

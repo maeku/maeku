@@ -13,7 +13,12 @@ exports[`the Entries component displays many entries 1`] = `
     >
       I walked for a while
     </h1>
-    <p />
+    <time
+      className="created-at"
+      dateTime="2019-09-02T19:47:41.113Z"
+    >
+      A million years ago
+    </time>
     <div
       className="controls"
     >
@@ -52,7 +57,12 @@ exports[`the Entries component displays many entries 1`] = `
     >
       In my sleep
     </h1>
-    <p />
+    <time
+      className="created-at"
+      dateTime="2019-09-02T19:47:41.113Z"
+    >
+      A million years ago
+    </time>
     <div
       className="controls"
     >
