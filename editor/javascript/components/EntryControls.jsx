@@ -12,7 +12,10 @@ class EntryControls extends React.Component {
           <a className="control view" href={this.props.urls.show}>
             <span>View</span>
           </a>
-          <button className="control delete" onClick={this.props.ondelete}>
+          <button
+            className="control delete"
+            onClick={this.props.ondelete}
+            tabIndex={-1}>
             <span>Delete</span>
           </button>
         </div>

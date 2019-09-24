@@ -35,6 +35,7 @@ exports[`the Entries component displays many entries 1`] = `
       <button
         className="control delete"
         onClick={[Function]}
+        tabIndex={-1}
       >
         <span>
           Delete
@@ -73,6 +74,7 @@ exports[`the Entries component displays many entries 1`] = `
       <button
         className="control delete"
         onClick={[Function]}
+        tabIndex={-1}
       >
         <span>
           Delete
