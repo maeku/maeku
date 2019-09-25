@@ -1,9 +1,13 @@
 :root {
+  --color-blue: #c4d2d9;
+  --color-orange: #fac5b9;
+  --color-red: #edcfd1;
   --bg-primary: #eee;
   --fg-primary: #222;
+  --fg-inverse: #eee;
   --fg-bright: #000;
   --fg-dim: #aaa;
-  --border-box-style: 1px solid (--fg-dim);
+  --border-box-style: 1px solid var(--fg-dim);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +18,7 @@
     --bg-accent: red;
     --bg-primary: #222;
     --fg-primary: #eee;
+    --fg-inverse: #222;
     --fg-bright: #fff;
     --fg-dim: #555;
     --border-box-style: 1px solid var(--fg-dim);
@@ -24,4 +29,3 @@ body {
   background-color: var(--bg-primary);
   color: var(--fg-primary);
 }
-
