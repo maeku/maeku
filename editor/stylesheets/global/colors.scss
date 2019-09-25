@@ -2,6 +2,7 @@
   --color-blue: #c4d2d9;
   --color-orange: #fac5b9;
   --color-red: #edcfd1;
+  --bg-accent: #ddd;
   --bg-primary: #eee;
   --fg-primary: #222;
   --fg-inverse: #eee;
@@ -15,7 +16,7 @@
     --color-blue: #08415c;
     --color-orange: #f06449;
     --color-red: #a31621;
-    --bg-accent: red;
+    --bg-accent: #000;
     --bg-primary: #222;
     --fg-primary: #eee;
     --fg-inverse: #222;
@@ -26,6 +27,6 @@
 }
 
 body {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-accent);
   color: var(--fg-primary);
 }

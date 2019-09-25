@@ -1,6 +1,7 @@
 @import 'entry-controls';
 
 .entries .entry {
+  background-color: var(--bg-primary);
   border: var(--border-box-style);
   border-width: 1px 1px 0 1px;
   margin: 0 0.5em;
