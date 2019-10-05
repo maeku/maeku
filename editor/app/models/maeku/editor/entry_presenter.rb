@@ -7,8 +7,8 @@ module Maeku
 
     def initialize(entry)
       @entry = entry
-      @id = entry.id
       @entry_content = entry.entry_content
+      @id = entry.id
     end
 
     def data
@@ -50,13 +50,13 @@ module Maeku
     private
 
     def created_at
-      datetime = @entry.created_at
+      datetime = entry.created_at
       time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago_suffix')
       return "#{time_ago_in_words(datetime)} #{time_ago_suffix}"
     end
 
     def updated_at
-      datetime = @entry.updated_at
+      datetime = entry.updated_at
       time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago.suffix')
       return "#{time_ago_in_words(datetime)} #{time_ago_suffix}"
     end
