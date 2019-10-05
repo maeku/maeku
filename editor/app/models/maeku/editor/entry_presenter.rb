@@ -16,18 +16,8 @@ module Maeku
         :id => id,
         :title => title,
         :content => content,
-        :datetime => {
-          :created => created_at,
-          :updated => updated_at,
-          :iso => {
-            :created => @entry.created_at,
-            :updated => @entry.updated_at
-          }
-        },
-        :urls => {
-          :edit => edit_entry_path(entry),
-          :show => entry_path(entry),
-        }
+        :datetime => datetime,
+        :urls => urls
       }
     end
 
@@ -38,6 +28,26 @@ module Maeku
     def content
       entry_content.content
     end
+
+    def datetime
+      {
+        :created => created_at,
+        :updated => updated_at,
+        :iso => {
+          :created => entry.created_at,
+          :updated => entry.updated_at
+        }
+      }
+    end
+
+    def urls
+      {
+        :edit => edit_entry_path(entry),
+        :show => entry_path(entry),
+      }
+    end
+
+    private
 
     def created_at
       datetime = @entry.created_at
@@ -50,8 +60,6 @@ module Maeku
       time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago.suffix')
       return "#{time_ago_in_words(datetime)} #{time_ago_suffix}"
     end
-
-    private
 
     def generate_title_from_content
       content = entry_content.content
