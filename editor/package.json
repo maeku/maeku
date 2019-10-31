@@ -1,6 +1,7 @@
 {
   "scripts": {
     "test": "jest",
+    "webpack-dev-build": "webpack --config webpack.dev.js",
     "webpack-dev-server": "webpack-dev-server --open --config webpack.dev.js",
     "webpack-build": "webpack --config webpack.prod.js"
   },

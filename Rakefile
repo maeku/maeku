@@ -46,6 +46,11 @@ namespace :dummy do
   desc "Migrate and seed the dummy application database (for local "   \
     "development)."
   task :setup do
+    Dir.chdir("editor") do
+      sh "yarn install"
+      sh "yarn webpack-dev-build"
+    end
+
     Dir.chdir("dummy") do
       sh "bundle exec rails maeku:dummy:setup"
     end
