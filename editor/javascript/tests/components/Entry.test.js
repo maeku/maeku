@@ -26,21 +26,6 @@ const entryWrapper = shallow(
   />,
 );
 
-test('the Entry component displays one entry', () => {
-  const component = renderer
-    .create(
-      <Entry
-        key={props.id}
-        title={props.title}
-        datetime={props.datetime}
-        urls={props.urls}
-      />,
-    )
-    .toJSON();
-
-  expect(component).toMatchSnapshot();
-});
-
 test('when first rendered, an Entry does not display EntryControls', () => {
   expect(entryWrapper.find('.controls')).not;
 });

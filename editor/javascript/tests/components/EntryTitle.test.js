@@ -1,15 +1,20 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import {configure, shallow, mount} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({adapter: new Adapter()});
+
 import EntryTitle from '../../components/EntryTitle.jsx';
 
-test('the EntryTitle component displays en entry title', () => {
+describe('<EntryTitle/>', () => {
   const props = {
-      title: "I walked for a while",
-    }
+    title: 'A title',
+  };
 
-  const component = renderer
-    .create( <EntryTitle title={props.title} />)
-    .toJSON();
+  const entryTitleWrapper = shallow(<EntryTitle title={props.title} />);
 
-  expect(component).toMatchSnapshot();
+  test('it displays the title', () => {
+    expect(entryTitleWrapper.text()).toEqual(props.title);
+  });
 });

@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`the EntryTitle component displays en entry title 1`] = `
-<h1
-  className="title"
->
-  I walked for a while
-</h1>
-`;

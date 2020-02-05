@@ -34,13 +34,6 @@ function entriesWrapper() {
   return mount(<Entries entries={someEntries()} />);
 }
 
-test('the Entries component displays many entries', () => {
-  const component = renderer
-    .create(<Entries entries={someEntries()} />)
-    .toJSON();
-  expect(component).toMatchSnapshot();
-});
-
 test('when no Entry is clicked, no EntryControls are displayed', () => {
   const wrapper = entriesWrapper();
   expect(wrapper.find('.controls')).not;

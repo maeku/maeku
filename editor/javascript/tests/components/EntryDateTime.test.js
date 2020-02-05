@@ -1,8 +1,14 @@
 import React from 'react';
+import ReactTestUtils from 'react-dom/test-utils';
 import renderer from 'react-test-renderer';
+import {configure, shallow} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({adapter: new Adapter()});
+
 import EntryDateTime from '../../components/EntryDateTime.jsx';
 
-test("the EntryDateTime component displays an entry's creation date", () => {
+describe('<EntryDateTime/>', () => {
   const props = {
     datetime: {
       created: 'A million years ago',
@@ -10,9 +16,17 @@ test("the EntryDateTime component displays an entry's creation date", () => {
     },
   };
 
-  const component = renderer
-    .create(<EntryDateTime datetime={props.datetime} />)
-    .toJSON();
+  const entryDateTimeWrapper = shallow(
+    <EntryDateTime datetime={props.datetime} />,
+  );
 
-  expect(component).toMatchSnapshot();
+  test('it displays the created date', () => {
+    expect(entryDateTimeWrapper.text()).toEqual(props.datetime.created);
+  });
+
+  test('it has ISO datetime metadata', () => {
+    expect(entryDateTimeWrapper.prop('dateTime')).toEqual(
+      props.datetime.iso.created,
+    );
+  });
 });
