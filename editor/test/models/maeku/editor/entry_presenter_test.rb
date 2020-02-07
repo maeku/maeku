@@ -42,7 +42,7 @@ module Maeku
 
       test "should return how long ago the entry was created" do
         presenter = EntryPresenter.new(@entry_with_title)
-        presenter_created_at = presenter.data[:datetime][:created]
+        presenter_created_at = presenter.data[:dateTime][:created]
         expected_date = time_ago_in_words(@entry_with_title.created_at)
         time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago_suffix')
         expected_value = "#{expected_date} #{time_ago_suffix}"
@@ -52,24 +52,24 @@ module Maeku
 
       test "should return how long ago the entry was updated" do
         presenter = EntryPresenter.new(@entry_with_title)
-        presenter_updated_at = presenter.data[:datetime][:updated]
+        presenter_updated_at = presenter.data[:dateTime][:updated]
         expected_date = time_ago_in_words(@entry_with_title.updated_at)
         time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago_suffix')
         expected_value = "#{expected_date} #{time_ago_suffix}"
 
         assert presenter_updated_at, expected_value
       end
-       
+
       test "should return the iso created_at time from the record" do
         presenter = EntryPresenter.new(@entry_with_title)
-        presenter_created_at = presenter.data[:datetime][:iso][:created]
+        presenter_created_at = presenter.data[:dateTime][:iso][:created]
         expected_date = @entry_with_title.created_at
         assert presenter_created_at, expected_date
       end
-      
+
       test "should return the iso updated_at time from the record" do
         presenter = EntryPresenter.new(@entry_with_title)
-        presenter_updated_at = presenter.data[:datetime][:iso][:updated]
+        presenter_updated_at = presenter.data[:dateTime][:iso][:updated]
         expected_date = @entry_with_title.updated_at
         assert presenter_updated_at, expected_date
       end

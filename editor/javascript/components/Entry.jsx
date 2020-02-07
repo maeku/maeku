@@ -41,7 +41,7 @@ class Entry extends React.Component {
           ref={this.entry}
           tabIndex="0">
           <EntryTitle title={this.props.title} />
-          <EntryDateTime datetime={this.props.datetime} />
+          <EntryDateTime dateTime={this.props.dateTime} />
           <EntryControls
             id={this.props.id}
             active={this.props.active}

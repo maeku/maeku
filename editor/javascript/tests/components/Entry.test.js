@@ -10,7 +10,7 @@ import Entry from '../../components/Entry.jsx';
 const props = {
   id: '1',
   title: 'I walked for a while',
-  datetime: {
+  dateTime: {
     created: 'A million years ago',
     iso: {created: '2019-09-02T19:47:41.113Z'},
   },
@@ -21,7 +21,7 @@ const entryWrapper = shallow(
   <Entry
     key={props.id}
     title={props.title}
-    datetime={props.datetime}
+    dateTime={props.dateTime}
     urls={props.urls}
   />,
 );

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-const EntryDateTime = ({datetime}) => (
-  <time className="created-at" dateTime={datetime.iso.created}>
-    {datetime.created}
+const EntryDateTime = ({dateTime}) => (
+  <time className="created-at" dateTime={dateTime.iso.created}>
+    {dateTime.created}
   </time>
 );
 

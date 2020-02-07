@@ -10,23 +10,23 @@ import EntryDateTime from '../../components/EntryDateTime.jsx';
 
 describe('<EntryDateTime/>', () => {
   const props = {
-    datetime: {
+    dateTime: {
       created: 'A million years ago',
       iso: {created: '2019-09-02T19:47:41.113Z'},
     },
   };
 
   const entryDateTimeWrapper = shallow(
-    <EntryDateTime datetime={props.datetime} />,
+    <EntryDateTime dateTime={props.dateTime} />,
   );
 
   test('it displays the created date', () => {
-    expect(entryDateTimeWrapper.text()).toEqual(props.datetime.created);
+    expect(entryDateTimeWrapper.text()).toEqual(props.dateTime.created);
   });
 
-  test('it has ISO datetime metadata', () => {
+  test('it has ISO dateTime metadata', () => {
     expect(entryDateTimeWrapper.prop('dateTime')).toEqual(
-      props.datetime.iso.created,
+      props.dateTime.iso.created,
     );
   });
 });

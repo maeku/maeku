@@ -12,7 +12,7 @@ function someEntries() {
     {
       id: '1',
       title: 'I walked for a while',
-      datetime: {
+      dateTime: {
         created: 'A million years ago',
         iso: {created: '2019-09-02T19:47:41.113Z'},
       },
@@ -21,7 +21,7 @@ function someEntries() {
     {
       id: '2',
       title: 'In my sleep',
-      datetime: {
+      dateTime: {
         created: 'A million years ago',
         iso: {created: '2019-09-02T19:47:41.113Z'},
       },

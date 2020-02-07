@@ -28,7 +28,7 @@ class Entries extends React.Component {
         id={entry.id}
         key={entry.id}
         active={Object.is(entry.id, activeEntryId)}
-        datetime={entry.datetime}
+        dateTime={entry.dateTime}
         deactivateEntry={this.deactivateEntry.bind(this)}
         toggleActivatedEntry={this.toggleActivatedEntry.bind(this, entry.id)}
         title={entry.title}

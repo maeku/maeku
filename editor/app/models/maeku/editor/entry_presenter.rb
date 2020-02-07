@@ -16,7 +16,7 @@ module Maeku
         :id => id,
         :title => title,
         :content => content,
-        :datetime => datetime,
+        :dateTime => datetime,
         :urls => urls
       }
     end
