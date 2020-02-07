@@ -17,6 +17,10 @@ class Entries extends React.Component {
     }
   }
 
+  deactivateEntry() {
+    this.setState({activeEntryId: null});
+  }
+
   render() {
     const activeEntryId = this.state.activeEntryId;
     const entries = this.props.entries.map(entry => (
@@ -25,7 +29,8 @@ class Entries extends React.Component {
         key={entry.id}
         active={Object.is(entry.id, activeEntryId)}
         datetime={entry.datetime}
-        onClick={this.toggleActivatedEntry.bind(this, entry.id)}
+        deactivateEntry={this.deactivateEntry.bind(this)}
+        toggleActivatedEntry={this.toggleActivatedEntry.bind(this, entry.id)}
         title={entry.title}
         urls={entry.urls}
       />

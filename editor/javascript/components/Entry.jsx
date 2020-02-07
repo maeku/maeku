@@ -7,8 +7,10 @@ import EntryTitle from './EntryTitle';
 class Entry extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {displayed: true};
+    this.entry = React.createRef();
+    this.state = {active: null, displayed: true};
     this.disappearEntry = this.disappearEntry.bind(this);
+    this.forceCloseInactiveEntry = this.forceCloseInactiveEntry.bind(this);
   }
 
   deleteEntry() {
@@ -23,10 +25,21 @@ class Entry extends React.Component {
     this.setState({displayed: !this.state.displayed});
   }
 
+  forceCloseInactiveEntry() {
+    if (this.entry.current.contains(document.activeElement)) {
+    } else this.props.deactivateEntry;
+  }
+
   render() {
     return (
       this.state.displayed && (
-        <article onClick={this.props.onClick} className="entry">
+        <article
+          className="entry"
+          onBlur={this.forceCloseInactiveEntry}
+          onClick={this.props.toggleActivatedEntry}
+          onKeyPress={this.props.toggleActivatedEntry}
+          ref={this.entry}
+          tabIndex="0">
           <EntryTitle title={this.props.title} />
           <EntryDateTime datetime={this.props.datetime} />
           <EntryControls
