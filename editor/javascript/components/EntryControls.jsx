@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {FaPenAlt, FaRegEye, FaTrash} from 'react-icons/fa';
 import {CSSTransition} from 'react-transition-group';
 
 class EntryControls extends React.Component {
@@ -13,6 +14,7 @@ class EntryControls extends React.Component {
             tabIndex={tabIndex}
             className="control edit"
             href={this.props.urls.edit}>
+            <FaPenAlt />
             <span>Edit</span>
           </a>
           <a
@@ -20,6 +22,7 @@ class EntryControls extends React.Component {
             tabIndex={tabIndex}
             className="control view"
             href={this.props.urls.show}>
+            <FaRegEye />
             <span>View</span>
           </a>
           <button
@@ -27,6 +30,7 @@ class EntryControls extends React.Component {
             className="control delete"
             onClick={this.props.ondelete}
             tabIndex={tabIndex}>
+            <FaTrash />
             <span>Delete</span>
           </button>
         </div>
