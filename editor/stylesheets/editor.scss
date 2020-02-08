@@ -5,3 +5,8 @@
 @import 'global/typography';
 
 @import 'entries/index';
+
+*:focus {
+  z-index: var(--z-index-top);
+  outline: var(--border-primary-focus);
+}
