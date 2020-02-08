@@ -31,6 +31,7 @@
     "lodash": "^4.17.13",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-icons": "^3.8.0",
     "react-transition-group": "^4.3.0",
     "react_ujs": "^2.4.4"
   },
@@ -39,12 +40,7 @@
       "\\.(jpg|jpeg|svg)$": "<rootDir>/javascript/tests/__mocks__/fileMock.js",
       "\\.(css|less|scss)$": "<rootDir>/javascript/tests/__mocks__/styleMock.js"
     },
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ]
+    "moduleFileExtensions": ["js", "jsx"],
+    "moduleDirectories": ["node_modules"]
   }
 }
