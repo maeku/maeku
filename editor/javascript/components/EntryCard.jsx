@@ -4,7 +4,7 @@ import EntryControls from './EntryControls';
 import EntryDateTime from './EntryDateTime';
 import EntryTitle from './EntryTitle';
 
-class Entry extends React.Component {
+class EntryCard extends React.Component {
   constructor(props) {
     super(props);
     this.entry = React.createRef();
@@ -54,4 +54,4 @@ class Entry extends React.Component {
   }
 }
 
-export default Entry;
+export default EntryCard;

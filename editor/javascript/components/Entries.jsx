@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import Entry from './Entry';
+import EntryCard from './EntryCard';
 
 class Entries extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Entries extends React.Component {
   render() {
     const activeEntryId = this.state.activeEntryId;
     const entries = this.props.entries.map(entry => (
-      <Entry
+      <EntryCard
         id={entry.id}
         key={entry.id}
         active={Object.is(entry.id, activeEntryId)}

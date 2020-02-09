@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 configure({adapter: new Adapter()});
 
-import Entry from '../../components/Entry.jsx';
+import EntryCard from '../../components/EntryCard.jsx';
 
 const props = {
   id: '1',
@@ -18,7 +18,7 @@ const props = {
 };
 
 const entryWrapper = shallow(
-  <Entry
+  <EntryCard
     key={props.id}
     title={props.title}
     dateTime={props.dateTime}
@@ -26,16 +26,16 @@ const entryWrapper = shallow(
   />,
 );
 
-test('when first rendered, an Entry does not display EntryControls', () => {
+test('when first rendered, an EntryCard does not display EntryControls', () => {
   expect(entryWrapper.find('.controls')).not;
 });
 
-test('when clicked, an Entry displays its EntryControls', () => {
+test('when clicked, an EntryCard displays its EntryControls', () => {
   entryWrapper.simulate('click');
   expect(entryWrapper.find('.controls'));
 });
 
-test('when clicked and then clicked again, the Entry does not display its \
+test('when clicked and then clicked again, the EntryCard does not display its \
   EntryControls', () => {
   entryWrapper.simulate('click');
   entryWrapper.simulate('click');
