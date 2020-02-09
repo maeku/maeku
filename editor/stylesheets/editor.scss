@@ -6,6 +6,8 @@
 
 @import 'entries/index';
 
+@import '../node_modules/codemirror/lib/codemirror.css';
+
 *:focus {
   z-index: var(--z-index-top);
   outline: var(--border-primary-focus);
