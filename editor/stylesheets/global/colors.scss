@@ -8,7 +8,8 @@
   --fg-inverse: #eee;
   --fg-bright: #000;
   --fg-dim: #aaa;
-  --border-box-style: 1px solid var(--fg-dim);
+  --fg-border: #ccc;
+  --border-box-style: 1px solid var(--fg-border);
   --border-primary-focus: 2px solid var(--fg-bright);
 }
 
@@ -21,9 +22,10 @@
     --bg-primary: #121212;
     --fg-primary: #eee;
     --fg-inverse: #222;
-    --fg-bright: #eee;
-    --fg-dim: #222;
-    --border-box-style: 1px solid var(--fg-dim);
+    --fg-bright: #fff;
+    --fg-dim: #555;
+    --fg-border: #222;
+    --border-box-style: 1px solid var(--fg-border);
     --border-primary-focus: 2px solid var(--fg-bright);
   }
 }
