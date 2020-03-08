@@ -23,6 +23,11 @@ module Maeku
       assert_not @entry.save
     end
 
+    test "entry without type is assigned the 'EntryType::Simple' type" do
+      @entry.save!
+      assert @entry.type, 'EntryType::Simple'
+    end
+
     test "should accept audio, image, and video attachments" do
       public_dir = Rails.root.join('public')
       audio = File.open("#{public_dir}/credits-music.mp3", 'r')
