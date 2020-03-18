@@ -1,0 +1,17 @@
+@import 'codemirror';
+
+form {
+  margin: 0 auto;
+  max-width: 700px;
+
+}
+label {
+  font-weight: 600;
+  line-height: var(--line-height-base);
+}
+
+label input {
+  display: block;
+  margin: 0.5em 0;
+  width: 100%;
+}
