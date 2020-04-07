@@ -1,30 +1,30 @@
-one:
+simple:
   title: "In my dream"
   content: "I fell into the lake."
-  entry_id: 1
-two:
+  entry: simple
+simple_untitled:
   content: "I used to sleep soundly."
-  entry_id: 2
-three:
+  entry: simple_untitled
+audio:
   title: "First night at my hometown"
   content: "The stream glowed pale yellow."
-  entry_id: 3
-four:
+  entry: audio
+audio_2:
   title: "Lying on the hill next to Mishima"
   content: "A train inched toward the edge of my city."
-  entry_id: 4
-five:
+  entry: audio_2
+image:
   content: >
     A train whistling in the distance woke me again. I had fallen asleep in
     the living room with my journal in hand.
-  entry_id: 5
-six:
+  entry: image
+image_2:
   content: "The stream seemed quieter than usual."
-  entry_id: 6
-seven:
+  entry: image_2
+video:
   title: "Returning home in the afternoon"
   content: "A streetlight turns on at dusk."
-  entry_id: 7
-eight:
+  entry: video
+video_2:
   content: "An old poster blows across the street."
-  entry_id: 8
+  entry: video_2
