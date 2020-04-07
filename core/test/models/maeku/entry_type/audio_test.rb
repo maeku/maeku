@@ -4,7 +4,7 @@ module Maeku
   class EntryType::AudioTest < ActiveSupport::TestCase
 
     setup do
-      author_id = 1
+      author_id = authors(:bashō).id
       entry_content = "She spilled some pizza onto the ice."
       @entry = EntryType::Audio.new(author_id: author_id)
       @entry.assign_attributes(entry_content_attributes: { content: entry_content })
@@ -37,6 +37,5 @@ module Maeku
       @entry.audio_files.attach(@attachment)
       assert @entry.type == "Maeku::EntryType::Audio"
     end
-
   end
 end

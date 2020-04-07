@@ -4,74 +4,84 @@ module Maeku
   module Editor
     class EntryPresenterTest < ActiveSupport::TestCase
       include ActionView::Helpers::DateHelper
+      include Maeku::Editor::Engine.routes.url_helpers
 
       setup do
-        @entry_with_title = maeku_entries(:four)
-        @entry_without_title = maeku_entries(:five)
+        @entry = maeku_entries(:simple)
+        @presenter = EntryPresenter.new(@entry)
+        @entry_without_title = maeku_entries(:simple_untitled)
+        @presenter_without_title = EntryPresenter.new(@entry_without_title)
       end
 
       test "should return entry's title" do
-        presenter_title = EntryPresenter.new(@entry_with_title).title
-        entry_title = @entry_with_title.entry_content.title
-        assert presenter_title, entry_title
+        assert @presenter.title, @entry.entry_content.title
       end
 
       test "should return truncated content if entry has no title" do
-        presenter_title = EntryPresenter.new(@entry_without_title).title
         generated_title = "A train whistling in the distance..."
-        assert presenter_title, generated_title
+
+        assert @presenter_without_title.title, generated_title
+      end
+
+      test "should return truncated content if entry title is an empty string" do
+        entry = Maeku::Entry.new(
+          author: authors(:bashō),
+          entry_content_attributes: { title: '', content: @presenter.content }
+        )
+
+        presenter = EntryPresenter.new(entry)
+
+        assert presenter.title, entry.entry_content.content.truncate(70, separator: /\s/)
       end
 
       test "should return entry content" do
-        presenter_content = EntryPresenter.new(@entry_with_title).content
-        entry_content = @entry_with_title.entry_content.content
-        assert presenter_content, entry_content
+        assert @presenter.content, @entry.entry_content.content
       end
 
       test "should return the entry edit path" do
-        presenter_edit_path = EntryPresenter.new(@entry_with_title).data[:urls][:edit]
-        expected_edit_path = "/entries/4/edit"
-        assert presenter_edit_path, expected_edit_path
+        edit_path = @presenter.data[:urls][:edit]
+        expected_edit_path = edit_entry_path(@entry.id)
+
+        assert edit_path, expected_edit_path
       end
 
       test "should return the entry view path" do
-        presenter_view_path = EntryPresenter.new(@entry_with_title).data[:urls][:show]
-        expected_view_path = "/entries/4"
-        assert presenter_view_path, expected_view_path
+        show_path = @presenter.data[:urls][:show]
+        expected_show_path = entry_path(@entry.id)
+
+        assert show_path, expected_show_path
       end
 
       test "should return how long ago the entry was created" do
-        presenter = EntryPresenter.new(@entry_with_title)
-        presenter_created_at = presenter.data[:dateTime][:created]
-        expected_date = time_ago_in_words(@entry_with_title.created_at)
+        created_at = @presenter.data[:dateTime][:created]
+        expected_date = time_ago_in_words(@entry.created_at)
         time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago_suffix')
         expected_value = "#{expected_date} #{time_ago_suffix}"
 
-        assert presenter_created_at, expected_value
+        assert created_at, expected_value
       end
 
       test "should return how long ago the entry was updated" do
-        presenter = EntryPresenter.new(@entry_with_title)
-        presenter_updated_at = presenter.data[:dateTime][:updated]
-        expected_date = time_ago_in_words(@entry_with_title.updated_at)
+        updated_at = @presenter.data[:dateTime][:updated]
+        expected_date = time_ago_in_words(@entry.updated_at)
         time_ago_suffix = I18n.t('editor.models.entry_presenter.time_ago_suffix')
         expected_value = "#{expected_date} #{time_ago_suffix}"
 
-        assert presenter_updated_at, expected_value
+        assert updated_at, expected_value
       end
 
       test "should return the iso created_at time from the record" do
-        presenter = EntryPresenter.new(@entry_with_title)
-        presenter_created_at = presenter.data[:dateTime][:iso][:created]
-        expected_date = @entry_with_title.created_at
-        assert presenter_created_at, expected_date
+        created_at = @presenter.data[:dateTime][:iso][:created]
+        expected_date = @entry.created_at
+
+        assert created_at, expected_date
       end
 
       test "should return the iso updated_at time from the record" do
-        presenter = EntryPresenter.new(@entry_with_title)
-        presenter_updated_at = presenter.data[:dateTime][:iso][:updated]
-        expected_date = @entry_with_title.updated_at
-        assert presenter_updated_at, expected_date
+        updated_at = @presenter.data[:dateTime][:iso][:updated]
+        expected_date = @entry.updated_at
+
+        assert updated_at, expected_date
       end
     end
   end

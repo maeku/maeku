@@ -4,9 +4,7 @@ module Maeku
   class EntryContentTest < ActiveSupport::TestCase
 
     setup do
-      @entry = maeku_entries(:one).dup
-      @entry_content = maeku_entry_contents(:one).dup
-      @entry.entry_content = @entry_content
+      @entry_content = maeku_entries(:simple).entry_content
     end
 
     test "should save new entry content if entry id exists" do
@@ -14,9 +12,9 @@ module Maeku
     end
 
     test "should not save new entry content without entry id" do
-      @entry.entry_content = nil
       @entry_content.entry_id = nil
-      assert_not @entry_content.save
+
+      assert_raise(ActiveRecord::NotNullViolation) { @entry_content.save }
     end
 
     test "should save entry content if content is nil" do

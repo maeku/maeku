@@ -4,7 +4,7 @@ module Maeku
   class EntryType::VideoTest < ActiveSupport::TestCase
 
     setup do
-      author_id = 1
+      author_id = authors(:bashō).id
       entry_content = "I turned the TV off."
       @entry = EntryType::Video.new(author_id: author_id)
       @entry.assign_attributes(entry_content_attributes: { content: entry_content })
