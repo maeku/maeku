@@ -3,7 +3,7 @@ module Maeku
     include ActionView::Helpers::DateHelper
     include Maeku::Editor::Engine.routes.url_helpers
 
-    attr_reader :entry, :id, :entry_content
+    attr_reader :entry, :entry_content, :id
 
     def initialize(entry)
       @entry = entry
@@ -22,7 +22,7 @@ module Maeku
     end
 
     def title
-      entry_content.title || generate_title_from_content
+      entry_content.title.presence || generate_title_from_content
     end
 
     def content
