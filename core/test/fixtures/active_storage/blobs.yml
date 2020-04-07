@@ -1,0 +1,24 @@
+<% audio = Rails.root.join("public", "credits-music.mp3") %>
+<% image = Rails.root.join("public", "grandparents.jpeg") %>
+<% video = Rails.root.join("public", "dramatic-exit.mp4") %>
+
+audio:
+  byte_size: "<%= File.size(audio) %>"
+  checksum: "<%= Digest::MD5.file(image).base64digest %>"
+  content_type: audio/mpeg
+  filename: credits-music.mp3
+  key: "<%= ActiveStorage::Blob.generate_unique_secure_token %>"
+
+image:
+  byte_size: "<%= File.size(image) %>"
+  checksum: "<%= Digest::MD5.file(image).base64digest %>"
+  content_type: image/jpeg
+  filename: grandparents.jpeg
+  key: "<%= ActiveStorage::Blob.generate_unique_secure_token %>"
+
+video:
+  byte_size: "<%= File.size(video) %>"
+  checksum: "<%= Digest::MD5.file(video).base64digest %>"
+  content_type: video/mp4
+  filename: dramatic-exit.mp4
+  key: "<%= ActiveStorage::Blob.generate_unique_secure_token %>"

@@ -1,0 +1,35 @@
+audio:
+  blob: audio
+  name: credits-music
+  record_type: "Maeku::Entry"
+  record: audio
+
+audio_2:
+  blob: audio
+  name: credits-music
+  record_type: "Maeku::Entry"
+  record: audio_2
+
+image:
+  blob: image
+  name: grandparents
+  record_type: "Maeku::Entry"
+  record: image
+
+image_2:
+  blob: image
+  name: grandparents
+  record_type: "Maeku::Entry"
+  record: image_2
+
+video:
+  blob: video
+  name: dramatic-exit
+  record_type: "Maeku::Entry"
+  record: video
+
+video_2:
+  blob: video
+  name: dramatic-exit
+  record_type: "Maeku::Entry"
+  record: video_2
