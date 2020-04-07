@@ -21,7 +21,7 @@ module Maeku
     validates_presence_of :image_files, if: Proc.new { |entry| entry.type == 'Maeku::EntryType::Image' }
     validates_presence_of :video_files, if: Proc.new { |entry| entry.type == 'Maeku::EntryType::Video' }
 
-    before_create :set_entry_type
+    before_save :set_entry_type
 
     def set_entry_type
       self.type = EntryType::Simple unless self.type
