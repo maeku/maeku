@@ -6,21 +6,21 @@ module Maeku
     end
 
     def edit
-      @entry = Editor::EntryPresenter.new(current_entry).data
+      @entry = current_entry_presenter.data
     end
 
     def show
-      @entry = Editor::EntryPresenter.new(current_entry)
+      @entry = current_entry_presenter.data
     end
 
     def update
-      respond_to do |format|
-        if current_entry.update(entry_params)
-          format.json { render json: current_entry, status: response.code }
-          format.html { redirect_to entry_url(current_entry), notice: 'Updated!' }
-        else
-          format.html { render :edit }
-        end
+      if current_entry.update(entry_params)
+        render json: {
+          status: response.code,
+          entry: current_entry
+        }
+      else
+        render :nothing, status: :unprocessable_entity
       end
     end
 
@@ -28,6 +28,10 @@ module Maeku
 
     def current_entry
       Entry.find(params[:id])
+    end
+
+    def current_entry_presenter
+      Editor::EntryPresenter.new(current_entry)
     end
 
     def entry_params
