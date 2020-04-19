@@ -17,18 +17,23 @@ class EntryEditor extends React.Component {
   updateEntry() {
     const url = this.props.entry.urls.show;
 
-    return fetch(url, {
+    fetch(url, {
       method: 'PATCH',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json;charset=utf-8'
       },
-      body: {
+      body: JSON.stringify({
         'entry': {
-          'entry_contents': { 'content': this.state.value }
+          'entry_content_attributes': {
+            'content': this.state.value
+          }
         }
-      }
-    });
+      })
+    })
+      .then(response => response.json())
+      .then((result) => this.handleSuccess())
+      .catch((error) => console.error(error))
   }
 
   handleChange(event) {
@@ -36,8 +41,12 @@ class EntryEditor extends React.Component {
   }
 
   handleSubmit(event) {
-    //this.setState({value: event.target.value});
-    this.updateEntry;
+    event.preventDefault();
+    this.updateEntry();
+  }
+
+  handleSuccess() {
+    console.log('nice');
   }
 
   render() {
