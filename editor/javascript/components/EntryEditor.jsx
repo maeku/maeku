@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {UnControlled as CodeMirror} from 'react-codemirror2'
+import {Controlled as CodeMirror} from 'react-codemirror2'
 
 require('codemirror/mode/markdown/markdown.js')
 require('codemirror/addon/display/panel.js')
@@ -32,7 +32,6 @@ class EntryEditor extends React.Component {
       })
     })
       .then(response => response.json())
-      .then((result) => this.handleSuccess())
       .catch((error) => console.error(error))
   }
 
@@ -52,7 +51,20 @@ class EntryEditor extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type='text' value={this.state.value} onChange={this.handleChange}/>
+        <CodeMirror
+          value={this.state.value}
+          options={{
+            autofocus: true,
+            cursorHeight: '0.5',
+            lineWrapping: true,
+            mode: 'markdown',
+            theme: 'maeku-editor'
+          }}
+          onBeforeChange={(editor, data, value) => {
+            this.setState({value});
+          }}
+          onChange={(editor, data, value) => {}}
+        />
         <input type='submit' value='Submit' />
       </form>
     )
