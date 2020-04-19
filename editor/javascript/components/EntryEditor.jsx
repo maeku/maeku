@@ -7,7 +7,7 @@ require('codemirror/addon/display/panel.js')
 class EntryEditor extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { value: props.entry.content };
+    this.state = { content: props.entry.content };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,7 +26,7 @@ class EntryEditor extends React.Component {
       body: JSON.stringify({
         'entry': {
           'entry_content_attributes': {
-            'content': this.state.value
+            'content': this.state.content
           }
         }
       })
@@ -36,7 +36,7 @@ class EntryEditor extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({content: event.target.content});
   }
 
   handleSubmit(event) {
@@ -52,7 +52,7 @@ class EntryEditor extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <CodeMirror
-          value={this.state.value}
+          value={this.state.content}
           options={{
             autofocus: true,
             cursorHeight: '0.5',
@@ -60,10 +60,10 @@ class EntryEditor extends React.Component {
             mode: 'markdown',
             theme: 'maeku-editor'
           }}
-          onBeforeChange={(editor, data, value) => {
-            this.setState({value});
+          onBeforeChange={(editor, data, content) => {
+            this.setState({content});
           }}
-          onChange={(editor, data, value) => {}}
+          onChange={(editor, data, content) => {}}
         />
         <input type='submit' value='Submit' />
       </form>
